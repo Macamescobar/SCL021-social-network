@@ -4,6 +4,3 @@
 //   // aqui tu codigo
 //   console.log('Hola mundo!');
 // };
-
-
-const ROUTER = new Router(PATHS);
