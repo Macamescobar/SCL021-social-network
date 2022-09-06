@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
-//import { myFunction } from './lib/index.js';
-/*
+/*import { myFunction } from './lib/index.js';
+
 const login = `
 <nav class="arrow"><i class="fa-solid fa-chevron-left fa-2x"></i></nav>
 <div class="container">
@@ -48,3 +48,4 @@ divElement.innerHTML = login;
 
 //myFunction();
 
+*/
