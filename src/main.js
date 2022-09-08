@@ -11,6 +11,7 @@ account.addEventListener("click", (e) => {
 });
 
 let arrow = document.getElementById("arrow");
+console.log(arrow);
 arrow.addEventListener("click", (e) => {
   divElement.innerHTML = login;
 });
