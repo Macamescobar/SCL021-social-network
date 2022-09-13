@@ -1,6 +1,1 @@
-const profile = () => {
-
-
-}
-
-export default profile;
+export const profile = () => {};

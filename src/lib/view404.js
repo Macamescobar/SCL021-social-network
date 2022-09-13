@@ -1,4 +1,4 @@
-const error404 = () => {
+export const error404 = () => {
   const div404 = document.createElement("div");
   const message404 = ` 
  <body class="body-404">
@@ -15,4 +15,3 @@ const error404 = () => {
   div404.innerHTML = message404;
   return div404;
 };
-
