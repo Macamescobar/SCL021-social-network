@@ -1,5 +1,5 @@
-import { paths } from "./lib/routes.js";
-import { createLogin } from "./lib/login.js";
+import { paths } from "./lib/router/routes.js";
+import { createLogin } from "./lib/views/login.js";
 
 // let root = () => {
 //   let rootLogin = document.getElementById("root");

@@ -1,8 +1,8 @@
-import { createLogin } from "./login.js";
-import { signUp } from "./account.js";
-import { error404 } from "./view404.js";
-import { profile } from "./profile.js";
-import { feed } from "./feed.js";
+import { createLogin } from "../views/login.js";
+import { signUp } from "../views/account.js";
+import { error404 } from "../views/view404.js";
+import { profile } from "../views/profile.js";
+import { feed } from "../views/feed.js";
 
 export const paths = (hash) => {
   const root = document.getElementById("root");

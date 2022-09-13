@@ -1,9 +1,10 @@
-import { paths } from "./routes.js";
+import { paths } from "../router/routes.js";
+import { signUp } from "./account.js";
 
 export const createLogin = () => {
   console.log("entra a create login");
   const root = document.createElement("div");
-  //Creando contenedor de la vista}
+  //Creando contenedor de la vista
   const container = document.createElement("div");
   container.className = "container";
   root.appendChild(container);
@@ -73,7 +74,7 @@ export const createLogin = () => {
   // Para registrarse
   const registered = document.createElement("h5");
   registered.className = "registered";
-  registered.innerText = "No registered yet?     ";
+  registered.innerText = "No registered yet?";
   formContainer.appendChild(registered);
   const createAccount = document.createElement("a");
   createAccount.setAttribute("href", "#");
@@ -83,8 +84,13 @@ export const createLogin = () => {
   createAccount.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("hola");
-    // navegar
+
   });
+  // createAccount.querySelector("#create-account").addEventListener("click", () => {
+  //   paths("#/singUp");
+  // });
+  
+ 
   registered.appendChild(createAccount);
   // Crear para cuando se olvida contraseña
   const yourPassword = document.createElement("h5");
@@ -99,3 +105,4 @@ export const createLogin = () => {
   yourPassword.appendChild(forgotPassword);
   return root;
 };
+
