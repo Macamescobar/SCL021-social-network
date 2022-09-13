@@ -53,7 +53,7 @@ const createLogin = () => {
   const socialDiv = document.createElement("div");
   socialDiv.className = "social";
   formContainer.appendChild(socialDiv);
-  // Crea icono de Facebook
+  // Crear icono de Facebook
   const facebookIcon = document.createElement("a");
   facebookIcon.setAttribute("href", "#");
   socialDiv.appendChild(facebookIcon);
@@ -91,5 +91,7 @@ const createLogin = () => {
   yourPassword.appendChild(forgotPassword);
   return root;
 };
+
+createLogin();
 console.log(createLogin);
 export default createLogin;

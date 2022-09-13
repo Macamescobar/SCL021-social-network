@@ -1,4 +1,5 @@
-import createLogin from "../login.js";
+import createLogin from "./login.js";
+
 const signUp = () => {
   const root = document.createElement("div");
   //Creando Arrow
