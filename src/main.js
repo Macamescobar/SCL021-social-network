@@ -1,12 +1,13 @@
-import paths from "./lib/routes";
+import paths from "./lib/routes.js";
+import feed from './lib/feed.js'
 
-// let root = () => {
-//   let rootLogin = document.getElementById("root");
-//   rootLogin.appendChild(signUp());
-// };
-// root();
+let root = () => {
+  let rootLogin = document.getElementById("root");
+  rootLogin.appendChild(feed());
+};
+root();
 
-const init = () => {
+/*/const init = () => {
   window.location.href = 'http://localhost:3000/#/';
   const root = document.getElementById('root');
   root.appendChild(createLogin());
@@ -16,7 +17,7 @@ const init = () => {
     paths(window.location.hash);
   });
 };
-window.addEventListener('load', init);
+window.addEventListener('load', init);*/
 
 
 
