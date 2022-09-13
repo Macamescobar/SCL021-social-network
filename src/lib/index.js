@@ -1,6 +1,6 @@
 // aqui exportaras las funciones que necesites
 
-import createLogin from "./login";
+import createLogin from "./views/login";
 import signUp from "./account";
 
 // export const myFunction = () => {
