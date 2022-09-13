@@ -1,18 +1,15 @@
-import createLogin from "./login.js";
-
-const signUp = () => {
+export const signUp = () => {
   const root = document.createElement("div");
   //Creando Arrow
-  let btnArrow = document.createElement("button");
+  const btnArrow = document.createElement("button");
   btnArrow.className = "arrow";
   btnArrow.setAttribute("id", "arrow");
   root.appendChild(btnArrow);
   const iconArrow = document.createElement("i");
   iconArrow.className = "fa-solid fa-chevron-left fa-2x";
   btnArrow.appendChild(iconArrow);
-  btnArrow.addEventListener("click", (e) => {
-    createLogin();
-  });
+
+  btnArrow.addEventListener("click", () => {});
   // Creando div contenedor
   const container = document.createElement("div");
   container.className = "container";
@@ -85,6 +82,3 @@ const signUp = () => {
 
   return root;
 };
-
-console.log(signUp);
-export default signUp;

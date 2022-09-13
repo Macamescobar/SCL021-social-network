@@ -1,5 +1,8 @@
-const createLogin = () => {
-  const root= document.createElement("div");
+import { paths } from "./routes.js";
+
+export const createLogin = () => {
+  console.log("entra a create login");
+  const root = document.createElement("div");
   //Creando contenedor de la vista}
   const container = document.createElement("div");
   container.className = "container";
@@ -76,7 +79,12 @@ const createLogin = () => {
   createAccount.setAttribute("href", "#");
   createAccount.setAttribute("id", "create-account");
   createAccount.className = "href";
-  createAccount.innerText = "  Create Account";
+  createAccount.innerText = "Create Account";
+  createAccount.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("hola");
+    // navegar
+  });
   registered.appendChild(createAccount);
   // Crear para cuando se olvida contraseña
   const yourPassword = document.createElement("h5");
@@ -91,7 +99,3 @@ const createLogin = () => {
   yourPassword.appendChild(forgotPassword);
   return root;
 };
-
-createLogin();
-console.log(createLogin);
-export default createLogin;

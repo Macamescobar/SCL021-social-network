@@ -1,6 +1,7 @@
-const feed = () => {
+export const feed = () => {
+  //Crear etiqueta nav
   const nav = document.createElement("nav");
-  //Container padre
+  // Crear div
   const containerNav = document.createElement("div");
   containerNav.className = "container-nav";
   nav.appendChild(containerNav);
@@ -47,5 +48,53 @@ const feed = () => {
   const imgProfile = document.createElement("img");
   imgProfile.setAttribute("src", "img/profile-1.jpg");
   divProfile.appendChild(imgProfile);
+
+  //  Crear etiqueta main
+  const main = document.createElement("main");
+  // Crear container
+  const feedContainer = document.createElement("div");
+  feedContainer.className = "container-feed";
+  main.appendChild(feedContainer);
+  //Create container sidebar with name
+  const sidebarleft = document.createElement("div");
+  sidebarleft.className = "sidebar-left";
+  feedContainer.appendChild(sidebarleft);
+  //Crear etiqueta a
+  const profileLeft = document.createElement("a");
+  profileLeft.className = "profile-left";
+  sidebarleft.appendChild(profileLeft);
+  //Crear div profile photo
+  const profilePhoto = document.createElement("div");
+  profilePhoto.className = "profile-photo";
+  profileLeft.appendChild(profilePhoto);
+  // Crear etiqueta img
+  const imgProfileLeft = document.createElement("img");
+  imgProfileLeft.setAttribute("src", "img/profile-1.jpg");
+  profilePhoto.appendChild(imgProfileLeft);
+  // Div text
+  const handle = document.createElement("div");
+  handle.className = "handle";
+  profileLeft.appendChild(handle);
+  // Crear h4 text name
+  const textName = document.createElement("h4");
+  textName.setAttribute("text", "Rosita");
+  handle.appendChild(textName);
+  // Create username text
+  const username = document.createElement("p");
+  username.className = "text-muted";
+  handle.appendChild(username);
+  username.setAttribute("text", "@Rosita");
+  // Crear sidebar
+  const sidebar = document.createElement("div");
+  sidebar.className = "sidebar";
+  sidebarleft.appendChild(sidebar);
+  // Create label a
+  const iconHome = document.createElement("a");
+  iconHome.className = "menu-item";
+  sidebar.appendChild(iconHome);
+  // Create span
+  const spanHome = document.createElement("span");
+  iconHome.appendChild(spanHome);
+
+  return nav;
 };
-export default feed;
