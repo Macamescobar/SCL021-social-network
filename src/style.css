@@ -199,3 +199,42 @@ padding-top: 4rem;
   text-decoration: none;
   color: #4422cf;
 }
+
+/* PAGE 404 STYLES */
+
+.body-404 {
+  background: #fff; /* Make it white if you need */
+  color: black;
+}
+.container-main{
+  margin-top: 10%;
+  display:grid;
+  grid-template-columns: 50vw 50vw;
+  column-gap: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+.container404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  margin-top: 10%;
+  margin-left: 30%;
+}
+
+.page-not-found {
+  color: #4422cf;
+}
+
+.img-404{
+  width:400px;
+  height: 350px;
+  border-radius: 40px;
+  color:#4422cf;
+}
+
+
+.hyperlink-404{
+  text-decoration: none;
+  color: #4422cf;
+  font-weight: bolder;
+}
