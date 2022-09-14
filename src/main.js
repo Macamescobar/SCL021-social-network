@@ -5,10 +5,11 @@ window.addEventListener("load", () => {
   window.location.href = "http://localhost:3000/#/";
   const root = document.getElementById("root");
   console.log("root", root);
-  root.appendChild(createLogin());
-
+  // root.appendChild(createLogin());
+  paths(window.location.hash);
   window.addEventListener("hashchange", () => {
-    // root.innerHTML = '';
+    
     paths(window.location.hash);
+
   });
 });

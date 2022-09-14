@@ -7,12 +7,16 @@ import { feed } from "../views/feed.js";
 export const paths = (hash) => {
   const root = document.getElementById("root");
   root.innerHTML = "";
+  console.log({hash})
   switch (hash) {
+    
     case "#/":
+      root.appendChild(createLogin());
+      break;
     case "#/login":
       root.appendChild(createLogin());
       break;
-    case "#/singUp":
+    case "#/signUp":
       root.appendChild(signUp());
       break;
     case "#/profile":

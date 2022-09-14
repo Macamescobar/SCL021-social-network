@@ -76,15 +76,15 @@ export const createLogin = () => {
   registered.className = "registered";
   registered.innerText = "No registered yet?";
   formContainer.appendChild(registered);
-  const createAccount = document.createElement("a");
-  createAccount.setAttribute("href", "#");
+  const createAccount = document.createElement("span");
+  // createAccount.setAttribute("href", "#");
   createAccount.setAttribute("id", "create-account");
   createAccount.className = "href";
   createAccount.innerText = "Create Account";
   createAccount.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("hola");
-
+    location.hash = "/signUp"
+    console.log("create account")
   });
   // createAccount.querySelector("#create-account").addEventListener("click", () => {
   //   paths("#/singUp");
