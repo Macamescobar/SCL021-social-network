@@ -7,18 +7,18 @@
 body {
   width: 390px;
   height: 844px;
-  background: linear-gradient(
-    160.2deg,
-    #ffd4db 36.49%,
-    rgba(3, 0, 157, 0.83) 121.67%
-  );
+  background: linear-gradient(160.2deg,
+      #ffd4db 36.49%,
+      rgba(3, 0, 157, 0.83) 121.67%);
   background-attachment: fixed;
   overflow: hidden;
 }
+
 .text-logo,
 .img-logo {
   visibility: hidden;
 }
+
 .arrow {
   position: absolute;
   left: 5%;
@@ -45,11 +45,9 @@ i {
   box-sizing: border-box;
   width: 359px;
   height: 557px;
-  background: linear-gradient(
-    91.13deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.129) 111.87%
-  );
+  background: linear-gradient(91.13deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.129) 111.87%);
   border-radius: 80px;
   backdrop-filter: blur(19px);
   border: 1px solid;
@@ -111,6 +109,7 @@ i {
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
 #btn-create {
   margin-top: 30px;
   margin-left: 20px;
@@ -139,6 +138,7 @@ i {
   font-size: 16px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .or-login,
 .or-login,
 .or-create,
@@ -204,10 +204,12 @@ i {
   text-decoration: none;
   color: #4422cf;
 }
+
 /* Plato */
 .plate-img {
   display: none;
 }
+
 .rotate-plate {
   display: none;
 }
@@ -215,9 +217,11 @@ i {
 /* PAGE 404 STYLES */
 
 .body-404 {
-  background: #fff; /* Make it white if you need */
+  background: #fff;
+  /* Make it white if you need */
   color: black;
 }
+
 .container-main {
   margin-top: 10%;
   display: grid;
@@ -225,6 +229,7 @@ i {
   column-gap: 3rem;
   font-family: "Poppins", sans-serif;
 }
+
 .container404 {
   display: flex;
   flex-direction: column;
@@ -249,6 +254,7 @@ i {
   color: #4422cf;
   font-weight: bolder;
 }
+
 /*Media query Login */
 @media (min-width: 992px) {
   .container {
@@ -256,7 +262,8 @@ i {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 3vw;
-  } 
+  }
+
   /*Form*/
   .form {
     width: 25rem;
@@ -264,6 +271,7 @@ i {
     backdrop-filter: blur(19px);
     height: 32rem;
   }
+
   .name-social {
     display: flex;
     flex-direction: row;
@@ -271,24 +279,37 @@ i {
     margin-left: 14vw;
     margin-top: 1vw;
   }
+
   .registered {
     margin: auto;
   }
+
   .img-logo {
     width: 50px;
     visibility: visible;
   }
+
   .text-logo {
     font-family: "Poppins", sans-serif;
     color: #4422cf;
     visibility: visible;
   }
+
   .plate-container {
     margin: auto;
   }
+
   .plate-img {
     width: 35vw;
     display: block;
     margin-left: 12vw;
+    animation: animatedPlate 7s linear forwards infinite;
+  }
+}
+
+
+@keyframes animatedPlate {
+  to {
+    transform: rotate(360deg);
   }
 }
