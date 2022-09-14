@@ -2,8 +2,20 @@ import { paths } from "../router/routes.js";
 import { signUp } from "./account.js";
 
 export const createLogin = () => {
-  console.log("entra a create login");
   const root = document.createElement("div");
+  const logo = document.createElement("div");
+  logo.className = "name-social";
+  root.appendChild(logo);
+  const imgLogo = document.createElement("img");
+  imgLogo.className = "img-logo";
+  imgLogo.setAttribute("src", "img/logo.png");
+  logo.appendChild(imgLogo);
+  console.log("entra a create login");
+  const texLogo = document.createElement("h1");
+  texLogo.innerText = "diShared";
+  texLogo.className = "text-logo";
+  logo.appendChild(texLogo);
+
   //Creando contenedor de la vista
   const container = document.createElement("div");
   container.className = "container";
@@ -74,7 +86,7 @@ export const createLogin = () => {
   // Para registrarse
   const registered = document.createElement("h5");
   registered.className = "registered";
-  registered.innerText = "No registered yet?";
+  registered.innerText = "No registered yet? ";
   formContainer.appendChild(registered);
   const createAccount = document.createElement("a");
   createAccount.setAttribute("href", "#");
@@ -84,25 +96,31 @@ export const createLogin = () => {
   createAccount.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("hola");
-
   });
   // createAccount.querySelector("#create-account").addEventListener("click", () => {
   //   paths("#/singUp");
   // });
-  
- 
+
   registered.appendChild(createAccount);
   // Crear para cuando se olvida contraseña
   const yourPassword = document.createElement("h5");
   yourPassword.className = "registered";
-  yourPassword.innerText = "Forgot your";
+  yourPassword.innerText = "Forgot your  ";
   formContainer.appendChild(yourPassword);
   const forgotPassword = document.createElement("a");
   forgotPassword.className = "href";
   forgotPassword.setAttribute("href", "#");
   forgotPassword.setAttribute("id", "forgot-password");
-  forgotPassword.innerText = "      Password?";
+  forgotPassword.innerText = " Password?";
   yourPassword.appendChild(forgotPassword);
+  //Creando contenedor del plato
+  const platecontainer = document.createElement("div");
+  platecontainer.className = "plate-container";
+  container.appendChild(platecontainer);
+  //Creando imagen plato
+  const plateImg = document.createElement("img");
+  plateImg.setAttribute("src", "img/plate.png");
+  plateImg.className = "plate-img";
+  platecontainer.appendChild(plateImg);
   return root;
 };
-

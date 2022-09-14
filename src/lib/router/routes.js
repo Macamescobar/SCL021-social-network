@@ -12,7 +12,7 @@ export const paths = (hash) => {
     case "#/login":
       root.appendChild(createLogin());
       break;
-    case "#/singUp":
+    case "#/signUp":
       root.appendChild(signUp());
       break;
     case "#/profile":
