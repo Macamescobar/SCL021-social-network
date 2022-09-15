@@ -2,8 +2,47 @@ import { paths } from "../router/routes.js";
 import { signUp } from "./account.js";
 
 export const createLogin = () => {
-  const root = document.createElement("div");
 
+  // Animación splash screen out
+
+  setTimeout(() => {
+    init.classList.add('display-none');
+  }, 2000);
+
+  const root = document.createElement("div");
+  // Creando div padre animación
+  const init = document.createElement("div");
+  init.className = "init";
+  root.appendChild(init);
+  // Creando hijo animación
+  const fadeIn = document.createElement("div");
+  fadeIn.className = "fadeIn";
+  init.appendChild(fadeIn);
+  // Creando imagen logo
+  const logoAnimation = document.createElement("img");
+  logoAnimation.className = "logoAnimation";
+  logoAnimation.setAttribute("src", "img/logo.png");
+  fadeIn.appendChild(logoAnimation);
+  // Creando h1
+  const titleHeader = document.createElement("h1");
+  titleHeader.className = "title-header";
+  fadeIn.appendChild(titleHeader);
+  // Creando WELCOME
+  const titleInit = document.createElement("span");
+  titleInit.innerText = "WELCOME";
+  titleInit.className = "tittle-init";
+  titleHeader.appendChild(titleInit);
+  // Párrafo TO
+  const toInit = document.createElement("p");
+  toInit.innerText = "TO";
+  titleInit.appendChild(toInit);
+  // Párrafo diShared
+  const disharedInit = document.createElement("p");
+  disharedInit.innerText = "diShared";
+  disharedInit.className = "dishared-init";
+  titleInit.appendChild(disharedInit);
+
+  // Div padre 2
   const logo = document.createElement("div");
   logo.className = "name-social";
   root.appendChild(logo);
@@ -132,3 +171,6 @@ export const createLogin = () => {
   platecontainer.appendChild(plateImg);
   return root;
 };
+
+
+console.log(createLogin);
