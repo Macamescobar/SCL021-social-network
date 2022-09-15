@@ -3,14 +3,17 @@ import { signUp } from "./account.js";
 
 export const createLogin = () => {
   const root = document.createElement("div");
+
   const logo = document.createElement("div");
   logo.className = "name-social";
   root.appendChild(logo);
+  // Agregar logo diShared
   const imgLogo = document.createElement("img");
   imgLogo.className = "img-logo";
   imgLogo.setAttribute("src", "img/logo.png");
   logo.appendChild(imgLogo);
   console.log("entra a create login");
+  // Name app diShared
   const texLogo = document.createElement("h1");
   texLogo.innerText = "diShared";
   texLogo.className = "text-logo";
