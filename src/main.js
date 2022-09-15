@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
   // root.appendChild(createLogin());
   paths(window.location.hash);
   window.addEventListener("hashchange", () => {
-    
     paths(window.location.hash);
 
   });
