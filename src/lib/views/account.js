@@ -1,10 +1,25 @@
 export const signUp = () => {
   const root = document.createElement("div");
+  const logo = document.createElement("div");
+  logo.className = "name-social";
+  root.appendChild(logo);
+  // Agregar logo diShared
+  const imgLogo = document.createElement("img");
+  imgLogo.className = "img-logo";
+  imgLogo.setAttribute("src", "img/logo.png");
+  logo.appendChild(imgLogo);
+  console.log("entra a create login");
+  // Name app diShared
+  const texLogo = document.createElement("h1");
+  texLogo.innerText = "diShared";
+  texLogo.className = "text-logo";
+  logo.appendChild(texLogo);
   //Creando Arrow
   const btnArrow = document.createElement("button");
   btnArrow.className = "arrow";
   btnArrow.setAttribute("id", "arrow");
   root.appendChild(btnArrow);
+  // Add icon arrow
   const iconArrow = document.createElement("i");
   iconArrow.className = "fa-solid fa-chevron-left fa-2x";
   btnArrow.appendChild(iconArrow);
@@ -32,6 +47,7 @@ export const signUp = () => {
   email.className = "text-create";
   email.innerText = "Email";
   form.appendChild(email);
+  // Create input with placeholder email
   const inputEmail = document.createElement("input");
   inputEmail.setAttribute("type", "text");
   inputEmail.setAttribute("id", "user-email");
@@ -43,6 +59,7 @@ export const signUp = () => {
   password.className = "text-create";
   password.innerText = "Password";
   form.appendChild(password);
+  // Create input with placeholder
   const inputPassword = document.createElement("input");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("id", "user-password");
@@ -79,6 +96,15 @@ export const signUp = () => {
   const google = document.createElement("i");
   google.className = "fa-brands fa-google-plus fa-2x";
   googleLogo.appendChild(google);
+  //Creando contenedor del plato
+  const platecontainer = document.createElement("div");
+  platecontainer.className = "plate-container";
+  container.appendChild(platecontainer);
+  //Creando imagen plato
+  const plateImg = document.createElement("img");
+  plateImg.setAttribute("src", "img/plate.png");
+  plateImg.className = "plate-img";
+  platecontainer.appendChild(plateImg);
 
   return root;
 };

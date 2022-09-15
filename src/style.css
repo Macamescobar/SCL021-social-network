@@ -257,7 +257,7 @@ i {
 
 /*Media query Login */
 @media (min-width: 992px) {
-  .container {
+  .container, .container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

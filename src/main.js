@@ -12,4 +12,3 @@ window.addEventListener("load", () => {
     paths(window.location.hash);
 
   });
-});
