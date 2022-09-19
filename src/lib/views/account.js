@@ -1,3 +1,5 @@
+import { signCreate } from "../../firebase/auth.js";
+
 export const signUp = () => {
   const root = document.createElement("div");
   const logo = document.createElement("div");
@@ -8,7 +10,6 @@ export const signUp = () => {
   imgLogo.className = "img-logo";
   imgLogo.setAttribute("src", "img/logo.png");
   logo.appendChild(imgLogo);
-  console.log("entra a create login");
   // Name app diShared
   const texLogo = document.createElement("h1");
   texLogo.innerText = "diShared";
@@ -42,12 +43,12 @@ export const signUp = () => {
   title.className = "title";
   title.innerText = "Create Account";
   form.appendChild(title);
-  // Creando Input de Email
+  // Creating label of Email
   const email = document.createElement("label");
   email.className = "text-create";
   email.innerText = "Email";
   form.appendChild(email);
-  // Create input with placeholder email
+  // Creating input with placeholder email
   const inputEmail = document.createElement("input");
   inputEmail.setAttribute("type", "text");
   inputEmail.setAttribute("id", "user-email");
@@ -59,7 +60,7 @@ export const signUp = () => {
   password.className = "text-create";
   password.innerText = "Password";
   form.appendChild(password);
-  // Create input with placeholder
+  // Create input password with placeholder
   const inputPassword = document.createElement("input");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("id", "user-password");
@@ -73,6 +74,15 @@ export const signUp = () => {
   btnContinue.setAttribute("id", "btn-create");
   btnContinue.innerText = "Continue";
   form.appendChild(btnContinue);
+
+  //Create account
+  btnContinue.addEventListener("click", (e) => {
+		e.preventDefault();
+		const email = document.querySelector('#user-email').value; 
+		const password = document.querySelector('#user-password').value;
+		signCreate(email, password);
+	});
+
   // Creando H4 Or Use
   const orCreate = document.createElement("h4");
   orCreate.className = "or-create";
@@ -105,6 +115,9 @@ export const signUp = () => {
   plateImg.setAttribute("src", "img/plate.png");
   plateImg.className = "plate-img";
   platecontainer.appendChild(plateImg);
+  
 
   return root;
 };
+
+

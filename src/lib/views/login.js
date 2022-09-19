@@ -1,12 +1,14 @@
+import { signInFunction } from "../../firebase/auth.js";
 import { paths } from "../router/routes.js";
 import { signUp } from "./account.js";
 
-export const createLogin = () => {
 
+
+export const createLogin = () => {
   // Animación splash screen out
 
   setTimeout(() => {
-    init.classList.add('display-none');
+    init.classList.add("display-none");
   }, 2000);
 
   const root = document.createElement("div");
@@ -51,7 +53,7 @@ export const createLogin = () => {
   imgLogo.className = "img-logo";
   imgLogo.setAttribute("src", "img/logo.png");
   logo.appendChild(imgLogo);
-  console.log("entra a create login");
+
   // Name app diShared
   const texLogo = document.createElement("h1");
   texLogo.innerText = "diShared";
@@ -72,12 +74,12 @@ export const createLogin = () => {
   title.textContent = "Hi there🥂";
   formContainer.appendChild(title);
 
-  // Creando Label que contiene input de Email
+  // Creando Label que contiene Email
   const inputLogin = document.createElement("label");
   inputLogin.className = "text-login";
   inputLogin.innerText = "Email";
   formContainer.appendChild(inputLogin);
-
+  //Creating input Email
   const directionMail = document.createElement("input");
   directionMail.setAttribute("type", "email");
   directionMail.setAttribute("placeholder", "dishared@gmail.com");
@@ -90,6 +92,7 @@ export const createLogin = () => {
   password.className = "text-login";
   password.innerText = "Password";
   formContainer.appendChild(password);
+  // Creating input password
   const inputPassword = document.createElement("input");
   inputPassword.setAttribute("type", "password");
   inputPassword.setAttribute("placeholder", "password 🔒");
@@ -100,8 +103,18 @@ export const createLogin = () => {
   //Creando Botón
   const btnLogin = document.createElement("button");
   btnLogin.setAttribute("id", "btn-login");
+  btnLogin.setAttribute("type", "submit");
   btnLogin.innerText = "Log In";
   formContainer.appendChild(btnLogin);
+  // Evento login
+  btnLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("in profile");
+    const email = document.querySelector('#user-email').value; 
+		const password = document.querySelector('#user-password').value;
+		signInFunction(email, password);
+  });
+
   // Creando el or Use
   const orUse = document.createElement("h4");
   orUse.innerText = "Or Use";
@@ -130,24 +143,16 @@ export const createLogin = () => {
   registered.className = "registered";
   registered.innerText = "No registered yet? ";
   formContainer.appendChild(registered);
+  // Create span for create account
   const createAccount = document.createElement("span");
-  // createAccount.setAttribute("href", "#");
   createAccount.setAttribute("id", "create-account");
   createAccount.className = "href";
   createAccount.innerText = "Create Account";
   createAccount.addEventListener("click", (e) => {
     e.preventDefault();
-
-    location.hash = "/signUp"
-    console.log("create account")
-
-    console.log("hola");
-
+    location.hash = "/signUp";
+    console.log("en create account");
   });
-  // createAccount.querySelector("#create-account").addEventListener("click", () => {
-  //   paths("#/singUp");
-  // });
-
   registered.appendChild(createAccount);
   // Crear para cuando se olvida contraseña
   const yourPassword = document.createElement("h5");
@@ -172,5 +177,3 @@ export const createLogin = () => {
   return root;
 };
 
-
-console.log(createLogin);

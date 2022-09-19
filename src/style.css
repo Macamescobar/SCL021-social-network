@@ -258,12 +258,12 @@ i {
 /*Media query Login */
 @media (min-width: 992px) {
 
-  .container,
   .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 9vw;
+    margin-top: 3vw;
+    
   }
 
   /*Form*/
@@ -280,7 +280,7 @@ i {
     align-items: center;
     margin-left: 9vw;
     margin-top: 1vw;
-    position: absolute;
+    /* position: absolute; */
     height: 200px;
     top: 5vw;
 
