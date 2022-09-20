@@ -5,10 +5,13 @@ import { signUp } from "./account.js";
 
 
 export const createLogin = () => {
+
+
   // Animación splash screen out
 
   setTimeout(() => {
-    init.classList.add("display-none");
+    init.classList.add('display-none');
+
   }, 2000);
 
   const root = document.createElement("div");
@@ -176,4 +179,8 @@ export const createLogin = () => {
   platecontainer.appendChild(plateImg);
   return root;
 };
+
+
+
+console.log(createLogin);
 

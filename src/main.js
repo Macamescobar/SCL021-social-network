@@ -11,5 +11,3 @@ window.addEventListener("load", () => {
   });
 });
 
-
-
