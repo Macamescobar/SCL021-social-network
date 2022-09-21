@@ -248,11 +248,11 @@ export const feed = () => {
 
   const storyPhoto3 = document.createElement("div");
   storyPhoto3.className = "profile-photo";
-  story2.appendChild(storyPhoto3);
+  story3.appendChild(storyPhoto3);
   const storyImg3 = document.createElement("img");
   storyImg3.setAttribute("src", "/img/profile-10.jpg");
   storyImg3.setAttribute("alt", "User's story")
-  story2.appendChild(storyImg3);
+  story3.appendChild(storyImg3);
   const storyName3 = document.createElement("p")
   storyName3.className = "storyName";
   storyName3.textContent = "Lilla James";
@@ -275,7 +275,7 @@ export const feed = () => {
   storyName4.className = "storyName";
   storyName4.textContent = "Pepito";
   story4.appendChild(storyName4);
- 
+
   // story5 container
   const story5 = document.createElement("div");
   story5.className = "story";
@@ -302,19 +302,19 @@ export const feed = () => {
 
   const storyPhoto6 = document.createElement("div");
   storyPhoto6.className = "profile-photo";
-  story6.appendChild(storyPhoto5);
+  story6.appendChild(storyPhoto6);
   const storyImg6 = document.createElement("img");
   storyImg6.setAttribute("src", "/img/profile-20.jpg");
   storyImg6.setAttribute("alt", "User's story")
-  story6.appendChild(storyImg5);
+  story6.appendChild(storyImg6);
   const storyName6 = document.createElement("p")
   storyName6.className = "storyName";
   storyName6.textContent = "Goku";
   story6.appendChild(storyName6);
 
   // Create post
-  const createPost = document.createElement("form")
-  createPost.className= "createPost";
+  const createPost = document.createElement("form");
+  createPost.className = "createPost";
   middle.appendChild(createPost);
   // profile img
   const divProfPh = document.createElement("div");
@@ -323,17 +323,15 @@ export const feed = () => {
   const profileImg = document.createElement("img");
   profileImg.setAttribute("src", "/img/profile-1.jpg");
   divProfPh.appendChild(profileImg);
-  
-
 
 
 
 
   // create right container
   const right = document.createElement("div");
-  right.className= "right";
-  feedContainer.appendChiled(right);
- 
+  right.className = "right";
+  feedContainer.appendChild(right);
+
 
 
 
