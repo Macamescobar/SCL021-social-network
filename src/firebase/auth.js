@@ -33,7 +33,7 @@ export const signInFunction = (email, password) => {
       const user = userCredential.user;
       console.log(user);
       // ...
-      location.hash = "/profile";
+      location.hash = "/feed";
     })
     .catch((error) => {
       console.log(error.message);
