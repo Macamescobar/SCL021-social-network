@@ -268,7 +268,7 @@ i {
 
   /*Form*/
   .form {
-    width: 25rem;
+    width: 28vw;
     background: rgba(0, 0, 0, 0.09);
     backdrop-filter: blur(19px);
     height: 32rem;
@@ -280,7 +280,11 @@ i {
     align-items: center;
     margin-left: 9vw;
     margin-top: 1vw;
+<<<<<<< HEAD
     height: 200px;
+=======
+    height: 100px;
+>>>>>>> 8c7d441 (firebase authentication with google)
     top: 5vw;
   }
 
