@@ -1,8 +1,4 @@
-import { signInFunction } from "../../firebase/auth.js";
-import { paths } from "../router/routes.js";
-import { signUp } from "./account.js";
-
-
+import { signInFunction, accessGoogle } from "../../firebase/auth.js";
 
 export const createLogin = () => {
 
@@ -141,6 +137,12 @@ export const createLogin = () => {
   const google = document.createElement("i");
   google.className = "fa-brands fa-google-plus fa-2x";
   googleIcon.appendChild(google);
+  //Evento popup
+  googleIcon.addEventListener('click', (e) => {
+		e.preventDefault();
+    console.log("hola wey")
+    accessGoogle();
+	});
   // Para registrarse
   const registered = document.createElement("h5");
   registered.className = "registered";

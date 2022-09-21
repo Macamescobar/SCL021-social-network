@@ -268,7 +268,7 @@ i {
 
   /*Form*/
   .form {
-    width: 25rem;
+    width: 28vw;
     background: rgba(0, 0, 0, 0.09);
     backdrop-filter: blur(19px);
     height: 32rem;
