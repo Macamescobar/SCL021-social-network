@@ -5,7 +5,9 @@ import {getAuth,
  GoogleAuthProvider,
  signInWithPopup,
  signInWithRedirect,
- getRedirectResult} 
+ getRedirectResult,
+ FacebookAuthProvider
+} 
 from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import {firebaseConfig}  from './firebaseConfig.js';
@@ -14,6 +16,7 @@ import {firebaseConfig}  from './firebaseConfig.js';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
+const providerFacebook = new FacebookAuthProvider(app);
 
 
 export {
@@ -25,5 +28,7 @@ export {
 	signInWithPopup,
 	provider,
 	signInWithRedirect,
-	getRedirectResult
+	getRedirectResult,
+	FacebookAuthProvider,
+	providerFacebook,
 };
