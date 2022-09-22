@@ -312,7 +312,7 @@ export const feed = () => {
   storyName6.textContent = "Goku";
   story6.appendChild(storyName6);
 
-  // Create post
+  // Create post form
   const createPost = document.createElement("form");
   createPost.className = "createPost";
   middle.appendChild(createPost);
@@ -323,12 +323,109 @@ export const feed = () => {
   const profileImg = document.createElement("img");
   profileImg.setAttribute("src", "/img/profile-1.jpg");
   divProfPh.appendChild(profileImg);
+  //create post
+  const postInput = document.createElement("input");
+  postInput.setAttribute("type", "text");
+  postInput.setAttribute("placeholder", "What's on your mind?");
+  createPost.appendChild(postInput);
+  // post buttom 
+  const submitBtn = document.createElement("input");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.setAttribute("value", "Post");
+  submitBtn.className("btn btn-primary");
+  createPost.appenChild(submitBtn)
+
+  // feeds
+  const divFeeds = document.createElement("div");
+  divFeeds.className("feeds");
+  middle.appendChild(divFeeds);
+
+  // feed
+  const divFeed = document.createElement("div");
+  divFeed.className("feed")
+  divFeeds.appendChild(divFeed);
+  // head 
+  const head = document.createElement("div");
+  head.className("head")
+  divFeed.appendChild(head);
+  // user feed
+  const userFeed = document.createElement("div");
+  userFeed.className("user")
+  head.appendChild(userFeed);
+  // profile photo
+  const photoFeed = document.createElement("div");
+  photoFeed.className("profile-photo")
+  head.appendChild(photoFeed);
+  const profileImgFeed = document.createElement("img");
+  profileImg.setAttribute("src", "/img/profile-13.jpg");
+  photoFeed.appendChild(profileImgFeed);
+  // other info user
+  const userInfo = document.createElement("div");
+  userInfo.className("info");
+  userFeed.appendChild(userInfo);
+  const usersName = document.createElement("h3")
+  usersName.textContent = "Lana Rose";
+  info.appendChild(usersName);
+  const datePost = document.createElement("small")
+  datePost.textContent = "Dubai, 15 MINUTES AGO";
+  info.appendChild(datePost);
+  // create icon edit post
+  const editIconDiv = document.createElement("span");
+  editIconDiv.className("edit");
+  userFeed.appendChild(editIconDiv);
+  const editIcon = document.createElement("i");
+  editIcon.className("uil uil-ellipsis-h");
+  editIconDiv.appendChild(editIcon);
+  // post photo
+  const postPhoto = document.createElement("div");
+  postPhoto.className("photo")
+  divFeed.appendChild(postPhoto);
+  const postImg = document.createElement("img");
+  profileImg.setAttribute("src", "/img/feed-1.jpg");
+  postPhoto.appendChild(postImg);
+  // action buttons
+  const actionButtons = document.createElement("div");
+  actionButtons.className("action-buttons")
+  divFeed.appendChild(actionButtons);
+  // interaction buttons
+  const interactionButtons = document.createElement("div");
+  interactionButtons.className("interaction-buttons")
+  actionButtons.appendChild(interactionButtons);
+  //spans
+
+  //like
+  const spanLike = document.createElement("span");
+  interactionButtons.appendChild(spanLike);
+  const likeIcon = document.createElement("i");
+  likeIcon.className("uil uil-heart");
+  spanLike.appendChild(likeIcon);
+  //comment
+  const spanComment = document.createElement("span");
+  interactionButtons.appendChild(spanComment);
+  const commentIcon = document.createElement("i");
+  commentIcon.className("uil uil-comment");
+  spanComment.appendChild(commentIcon);
+  //share
+  const spanShare = document.createElement("span");
+  interactionButtons.appendChild(spanShare);
+  const shareIcon = document.createElement("i");
+  shareIcon.className("uil uil-share");
+  spanShare.appendChild(shareIcon);
+
+  
 
 
-  // create right container
+
+
+
+
+  
+
+
+  /*// create right container
   const right = document.createElement("div");
   right.className = "right";
-  feedContainer.appendChild(right);
+  feedContainer.appendChild(right);*/
 
 
 
