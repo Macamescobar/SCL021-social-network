@@ -1,4 +1,4 @@
-import { signInFunction, accessGoogle } from "../../firebase/auth.js";
+import { signInFunction, accessGoogle, loginWithFacebook } from "../../firebase/auth.js";
 
 export const createLogin = () => {
 
@@ -130,6 +130,13 @@ export const createLogin = () => {
   const facebook = document.createElement("i");
   facebook.className = "fa-brands fa-facebook fa-2x";
   facebookIcon.appendChild(facebook);
+  // Event facebook login
+  facebookIcon.addEventListener('click', (e) => {
+		e.preventDefault();
+    loginWithFacebook();
+    // console.log("holaaaaaaa")
+	});
+
   // Crear icono de google
   const googleIcon = document.createElement("a");
   googleIcon.setAttribute("href", "#");

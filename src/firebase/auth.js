@@ -6,7 +6,9 @@ import {
   getRedirectResult,
   signInWithRedirect,
   provider,
-  signInWithPopup
+  signInWithPopup,
+  FacebookAuthProvider,
+  providerFacebook,
 } from "./init.js";
 
 //Función de promesa para CREAR usuario con email y contraseña
@@ -54,7 +56,7 @@ export const accessGoogle = () => {
   //   // The signed-in user info.
   //   const user = result.user;
   //   console.log(user)
-    
+
   // }).catch((error) => {
   //   // Handle Errors here.
   //   const errorCode = error.code;
@@ -66,26 +68,53 @@ export const accessGoogle = () => {
   //   // ...
   // });
 
-  // With popup 
+  // With popup
   signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      console.log(credential);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // alert(user.displayName);
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      // const email = error.customData.email;
+      // The AuthCredential type that was used.
+      // const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+      alert(errorMessage);
+    });
+};
+
+
+export const loginWithFacebook = () => {
+  signInWithPopup(auth, providerFacebook)
   .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    console.log(credential)
-    const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    // alert(user.displayName);
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    console.log(credential);
+    const accessToken = credential.accessToken;
+
     // ...
-  }).catch((error) => {
+  })
+  .catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
     // The email of the user's account used.
     const email = error.customData.email;
     // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
     // ...
-    alert(errorMessage);
   });
-};
+}

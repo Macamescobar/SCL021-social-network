@@ -325,19 +325,10 @@ export const feed = () => {
   divProfPh.appendChild(profileImg);
 
 
-
-
   // create right container
   const right = document.createElement("div");
   right.className = "right";
   feedContainer.appendChild(right);
-
-
-
-
-
-
-
 
 
 
