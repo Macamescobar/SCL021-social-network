@@ -1,5 +1,6 @@
 export const feed = () => {
   const root = document.createElement("div");
+  root.className = "feed-container";
   //Crear etiqueta nav
   const nav = document.createElement("nav");
   root.appendChild(nav);
@@ -9,10 +10,11 @@ export const feed = () => {
   nav.appendChild(containerNav);
   //Creando logo
   const nameLogo = document.createElement("h2");
-  nameLogo.className = "logo";
+  nameLogo.className = "logo-nav";
   containerNav.appendChild(nameLogo);
   //Crear img logo
   const imgLogo = document.createElement("img");
+  imgLogo.className= "img-nav";
   imgLogo.setAttribute("src", "img/logo.png");
   nameLogo.appendChild(imgLogo);
   // Crear title de red social
@@ -48,6 +50,7 @@ export const feed = () => {
   create.appendChild(divProfile);
   // Insertar img de perfil
   const imgProfile = document.createElement("img");
+  imgProfile.className = "profilePhoto";
   imgProfile.setAttribute("src", "img/profile-1.jpg");
   divProfile.appendChild(imgProfile);
 
@@ -72,6 +75,7 @@ export const feed = () => {
   profileLeft.appendChild(profilePhoto);
   // Crear etiqueta img
   const imgProfileLeft = document.createElement("img");
+  imgProfileLeft.className = "profilePhoto";
   imgProfileLeft.setAttribute("src", "img/profile-1.jpg");
   profilePhoto.appendChild(imgProfileLeft);
   // Div text
@@ -155,6 +159,7 @@ export const feed = () => {
   divContainerNotification.appendChild(divProfileNotification);
   // Create img profile
   const imgProfileNotification = document.createElement("img");
+  imgProfileNotification.className = "profilePhoto";
   imgProfileNotification.setAttribute("src", "/img/profile-4.jpg");
   divProfileNotification.appendChild(imgProfileNotification);
   // Create div notification body
@@ -215,6 +220,7 @@ export const feed = () => {
   storyPhoto.className = "profile-photo";
   story.appendChild(storyPhoto);
   const storyImg = document.createElement("img");
+  storyImg.className = "profilePhoto";
   storyImg.setAttribute("src", "/img/profile-12.jpg");
   storyImg.setAttribute("alt", "User's story")
   story.appendChild(storyImg);
@@ -234,6 +240,7 @@ export const feed = () => {
   storyPhoto2.className = "profile-photo";
   story2.appendChild(storyPhoto2);
   const storyImg2 = document.createElement("img");
+  storyImg2.className = "profilePhoto";
   storyImg2.setAttribute("src", "/img/profile-15.jpg");
   storyImg2.setAttribute("alt", "User's story")
   story2.appendChild(storyImg2);
@@ -252,6 +259,7 @@ export const feed = () => {
   storyPhoto3.className = "profile-photo";
   story3.appendChild(storyPhoto3);
   const storyImg3 = document.createElement("img");
+  storyImg3.className = "profilePhoto";
   storyImg3.setAttribute("src", "/img/profile-10.jpg");
   storyImg3.setAttribute("alt", "User's story")
   story3.appendChild(storyImg3);
@@ -270,6 +278,7 @@ export const feed = () => {
   storyPhoto4.className = "profile-photo";
   story4.appendChild(storyPhoto4);
   const storyImg4 = document.createElement("img");
+  storyImg4.className = "profilePhoto";
   storyImg4.setAttribute("src", "/img/profile-13.jpg");
   storyImg4.setAttribute("alt", "User's story")
   story4.appendChild(storyImg4);
@@ -288,6 +297,7 @@ export const feed = () => {
   storyPhoto5.className = "profile-photo";
   story5.appendChild(storyPhoto5);
   const storyImg5 = document.createElement("img");
+  storyImg5.className = "profilePhoto";
   storyImg5.setAttribute("src", "/img/profile-16.jpg");
   storyImg5.setAttribute("alt", "User's story")
   story5.appendChild(storyImg5);
@@ -306,6 +316,7 @@ export const feed = () => {
   storyPhoto6.className = "profile-photo";
   story6.appendChild(storyPhoto6);
   const storyImg6 = document.createElement("img");
+  storyImg6.className = "profilePhoto";
   storyImg6.setAttribute("src", "/img/profile-20.jpg");
   storyImg6.setAttribute("alt", "User's story")
   story6.appendChild(storyImg6);
@@ -323,6 +334,7 @@ export const feed = () => {
   divProfPh.className = "profile-photo";
   createPost.appendChild(divProfPh);
   const profileImg = document.createElement("img");
+  profileImg.className = "profilePhoto";
   profileImg.setAttribute("src", "/img/profile-1.jpg");
   divProfPh.appendChild(profileImg);
   //create post
@@ -359,7 +371,8 @@ export const feed = () => {
   photoFeed.className = "profile-photo"
   head.appendChild(photoFeed);
   const profileImgFeed = document.createElement("img");
-  profileImg.setAttribute("src", "/img/profile-13.jpg");
+  profileImgFeed.className = "profilePhoto";
+  profileImgFeed.setAttribute("src", "/img/profile-13.jpg");
   photoFeed.appendChild(profileImgFeed);
   // other info user
   const userInfo = document.createElement("div");
@@ -383,7 +396,8 @@ export const feed = () => {
   postPhoto.className = "photo";
   divFeed.appendChild(postPhoto);
   const postImg = document.createElement("img");
-  profileImg.setAttribute("src", "/img/feed-1.jpg");
+  postImg.className = "profilePhoto";
+  postImg.setAttribute("src", "/img/feed-1.jpg");
   postPhoto.appendChild(postImg);
   // action buttons
   const actionButtons = document.createElement("div");
@@ -431,12 +445,15 @@ export const feed = () => {
   likedBy.appendChild(likedSpan);
   // liked by photos
   const likedByPhotos = document.createElement("img");
+  likedByPhotos.className = "profilePhoto";
   likedByPhotos.setAttribute("src", "/img/profile-12.jpg");
   likedSpan.appendChild(likedByPhotos);
   const likedByPhotos2 = document.createElement("img");
+  likedByPhotos2.className = "profilePhoto";
   likedByPhotos2.setAttribute("src", "/img/profile-4.jpg");
   likedSpan.appendChild(likedByPhotos2);
   const likedByPhotos3 = document.createElement("img");
+  likedByPhotos3.className = "profilePhoto";
   likedByPhotos3.setAttribute("src", "/img/profile-2.jpg");
   likedSpan.appendChild(likedByPhotos3);
   // etiqueta <p>Liked by <b>Ernest Achiever</b> and <b> 2,400 others</b></p>
@@ -491,11 +508,44 @@ export const feed = () => {
   searchMessIcon.className = "uil uil-search";
   searchMessage.appendChild(searchMessIcon);
 
-
-
-
-
-
+  //  Input search Messages
+  const inputMessage = document.createElement("input");
+  inputMessage.setAttribute("type", "search");
+  inputMessage.setAttribute("placeholder", "Search messages");
+  inputMessage.setAttribute("id", "message-search");
+  searchMessage.appendChild(inputMessage);
+  // Message Category 
+  const categoryMessage = document.createElement("div");
+  categoryMessage.className = "category";
+  rightMessage.appendChild(categoryMessage);
+  // Message Active
+  const activeMesage = document.createElement("h6");
+  activeMesage.className = "active";
+  activeMesage.textContent = "Primary";
+  categoryMessage.appendChild(activeMesage);
+  // General
+  const general = document.createElement("h6");
+  general.textContent = "General";
+  categoryMessage.appendChild(general);
+  // Message request 
+  const messageRequest = document.createElement("h6");
+  messageRequest.className = "message-requests";
+  messageRequest.textContent = "Requests(7)";
+  categoryMessage.appendChild(messageRequest);
+  // Message photo
+  const messageDivPhoto = document.createElement("div");
+  messageDivPhoto.className = "message";
+  rightMessage.appendChild(messageDivPhoto);
+  // div Profile photo
+  const divProfilePhoto = document.createElement("div");
+  divProfilePhoto.className = "profile-photo";
+  messageDivPhoto.appendChild(divProfilePhoto);
+  // Photo message
+  const photoMessageimg = document.createElement("img");
+  photoMessageimg.className = "profilePhoto";
+  photoMessageimg.setAttribute("src", "/img/profile-10.jpg");
+  messageDivPhoto.appendChild(photoMessageimg);
+  //linea 227
 
 
   return root;
