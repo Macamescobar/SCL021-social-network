@@ -545,7 +545,76 @@ export const feed = () => {
   photoMessageimg.className = "profilePhoto";
   photoMessageimg.setAttribute("src", "/img/profile-10.jpg");
   messageDivPhoto.appendChild(photoMessageimg);
-  //linea 227
+  // active
+  const divActive = document.createElement("div");
+  divActive.className = "active";
+  divProfilePhoto.appendChild(divActive);
+  //message body
+  const messageBody = document.createElement("div");
+  messageBody.className = "message-body";
+  rightMessage.appendChild(messageBody);
+  // message user
+  const messageUser = document.createElement("h5");
+  messageUser.textContent = "Edem Quist";
+  messageBody.appendChild(messageUser);
+  // message text
+  const messageText = document.createElement("p");
+  messageText.className = "text-muted";
+  messageText.textContent = "Just wake up bruh";
+  messageBody.appendChild(messageText);
+
+  //Friends request
+  const divFriendRequest = document.createElement("div");
+  divFriendRequest.className = "friend-request";
+  right.appendChild(divFriendRequest);
+  const requestTittle = document.createElement("h4");
+  requestTittle.textContent = "Requests";
+  divFriendRequest.appendChild(requestTittle);
+  // requests
+  const request = document.createElement("div");
+  request.className = "request";
+  divFriendRequest.appendChild(request);
+  //info request
+  const requestInfo = document.createElement("div");
+  requestInfo.className = "info";
+  request.appendChild(requestInfo);
+  // request photo
+  const requestPhoto = document.createElement("div");
+  requestPhoto.className = "profile-photo";
+  requestInfo.appendChild(requestPhoto);
+  const photoRequestimg = document.createElement("img");
+  photoRequestimg.setAttribute("src", "/img/profile-13.jpg");
+  requestPhoto.appendChild(photoRequestimg);
+  // friend request
+  const divRequestName = document.createElement("div");
+  requestInfo.appendChild(divRequestName);
+  const requestName = document.createElement("h5");
+  requestName.textContent = "Hajia Bintu";
+  divRequestName.appendChild(requestName); 
+  const requestMutual = document.createElement("p");
+  requestMutual.className = "text-muted";
+  requestMutual.textContent = "8 mutual friends";
+  divRequestName.appendChild(requestMutual); 
+  // buttons 
+  const requestActions = document.createElement("div");
+  requestActions.className = "action";
+  requestInfo.appendChild(requestActions); 
+  const requestAccept = document.createElement("button");
+  requestAccept.className = "btn btn-primary";
+  requestAccept.textContent = "Accept";
+  requestActions.appendChild(requestAccept);
+  const requestDecline = document.createElement("button");
+  requestDecline.className = "btn";
+  requestDecline.textContent = "Decline";
+  requestActions.appendChild(requestDecline);
+
+
+  
+
+
+
+
+
 
 
   return root;
