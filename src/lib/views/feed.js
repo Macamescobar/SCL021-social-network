@@ -331,7 +331,6 @@ export const feed = () => {
   feedContainer.appendChild(right);
 
 
-
   return root;
 };
 console.log(feed);
