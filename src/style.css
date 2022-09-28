@@ -1,8 +1,41 @@
-* {
+:root {
+  --color-withe: hsl(252, 30%, 100%);
+  --color-light: hsl(252, 30%, 95%);
+  --color-gray: hsl(252, 15%, 65%);
+  --color-primary: hsl(252, 75%, 60%);
+  --color-secondary: hsl(252, 100%, 90%);
+  --color-success: hsl(120, 95%, 65%);
+  --color-danger: hsl(0, 95%, 65%);
+  --color-dark: hsl(252, 30%, 17%);
+  --color-black: hsl(252, 30%, 10%);
+
+  --border-radius: 2rem;
+  --card-border-radius: 1rem;
+  --btn-padding: 0.6rem 2rem;
+  --search-padding: 0.6rem 1rem;
+  --card-padding: 1rem;
+
+  --sticky-top-left: 5.4rem;
+  --sticky-top-right: -18rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+/** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+}*/
 
 body {
   width: 390px;
@@ -320,7 +353,7 @@ i {
 
 /*splash screen*/
 
- .logoAnimation {
+.logoAnimation {
   position: fixed;
   top: 20%;
   left: 50%;
@@ -392,4 +425,109 @@ i {
 .fadeIn {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
-} 
+}
+
+/*feed style*/
+
+.feed-container {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  color: var(--color-dark);
+  background: var(--color-light);
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.logo-nav,
+.img-nav {
+  width: 70px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.profile-photo {
+  width: 43px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img.profilePhoto {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--btn-padding);
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 14px;
+}
+
+.btn:hover {
+opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.text-bold {
+font-weight: 500;
+}
+
+.text-muted {
+  color: var(--color-gray);
+}
+
+/* ==================== NAVBAR ========== */
+
+nav {
+  width: 100%;
+  background: var(--color-withe);
+  padding: 11px 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+h3 {
+font-size:30px;
+
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar{
+  background: var(--color-light);
+  border-radius: var(--border-radius);
+  padding: var(--search-padding);
+}
+
+.search-bar input[type="search"] {
+  background: transparent;
+  width: 30vw; /* view window page */
+  margin-left: 16px;
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+nav .search-bar input [type="search"]::placeholder {
+  color: var(--color-gray);
+}
+
+nav .create {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+

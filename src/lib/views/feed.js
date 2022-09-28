@@ -1,5 +1,6 @@
 export const feed = () => {
   const root = document.createElement("div");
+  root.className = "feed-container";
   //Crear etiqueta nav
   const nav = document.createElement("nav");
   root.appendChild(nav);
@@ -9,10 +10,11 @@ export const feed = () => {
   nav.appendChild(containerNav);
   //Creando logo
   const nameLogo = document.createElement("h2");
-  nameLogo.className = "logo";
+  nameLogo.className = "logo-nav";
   containerNav.appendChild(nameLogo);
   //Crear img logo
   const imgLogo = document.createElement("img");
+  imgLogo.className= "img-nav";
   imgLogo.setAttribute("src", "img/logo.png");
   nameLogo.appendChild(imgLogo);
   // Crear title de red social
@@ -48,6 +50,7 @@ export const feed = () => {
   create.appendChild(divProfile);
   // Insertar img de perfil
   const imgProfile = document.createElement("img");
+  imgProfile.className = "profilePhoto";
   imgProfile.setAttribute("src", "img/profile-1.jpg");
   divProfile.appendChild(imgProfile);
 
@@ -72,6 +75,7 @@ export const feed = () => {
   profileLeft.appendChild(profilePhoto);
   // Crear etiqueta img
   const imgProfileLeft = document.createElement("img");
+  imgProfileLeft.className = "profilePhoto";
   imgProfileLeft.setAttribute("src", "img/profile-1.jpg");
   profilePhoto.appendChild(imgProfileLeft);
   // Div text
@@ -155,6 +159,7 @@ export const feed = () => {
   divContainerNotification.appendChild(divProfileNotification);
   // Create img profile
   const imgProfileNotification = document.createElement("img");
+  imgProfileNotification.className = "profilePhoto";
   imgProfileNotification.setAttribute("src", "/img/profile-4.jpg");
   divProfileNotification.appendChild(imgProfileNotification);
   // Create div notification body
@@ -193,12 +198,14 @@ export const feed = () => {
   textMessage.className = "Messages";
   aNotMess.appendChild(textMessage);
 
-  //STORIES
+
   // middle container
 
   const middle = document.createElement("div");
   middle.className = "middle";
   feedContainer.appendChild(middle);
+
+  //STORIES
   // stories container
 
   const storiesContainer = document.createElement("div");
@@ -213,6 +220,7 @@ export const feed = () => {
   storyPhoto.className = "profile-photo";
   story.appendChild(storyPhoto);
   const storyImg = document.createElement("img");
+  storyImg.className = "profilePhoto";
   storyImg.setAttribute("src", "/img/profile-12.jpg");
   storyImg.setAttribute("alt", "User's story")
   story.appendChild(storyImg);
@@ -232,6 +240,7 @@ export const feed = () => {
   storyPhoto2.className = "profile-photo";
   story2.appendChild(storyPhoto2);
   const storyImg2 = document.createElement("img");
+  storyImg2.className = "profilePhoto";
   storyImg2.setAttribute("src", "/img/profile-15.jpg");
   storyImg2.setAttribute("alt", "User's story")
   story2.appendChild(storyImg2);
@@ -250,6 +259,7 @@ export const feed = () => {
   storyPhoto3.className = "profile-photo";
   story3.appendChild(storyPhoto3);
   const storyImg3 = document.createElement("img");
+  storyImg3.className = "profilePhoto";
   storyImg3.setAttribute("src", "/img/profile-10.jpg");
   storyImg3.setAttribute("alt", "User's story")
   story3.appendChild(storyImg3);
@@ -268,6 +278,7 @@ export const feed = () => {
   storyPhoto4.className = "profile-photo";
   story4.appendChild(storyPhoto4);
   const storyImg4 = document.createElement("img");
+  storyImg4.className = "profilePhoto";
   storyImg4.setAttribute("src", "/img/profile-13.jpg");
   storyImg4.setAttribute("alt", "User's story")
   story4.appendChild(storyImg4);
@@ -286,6 +297,7 @@ export const feed = () => {
   storyPhoto5.className = "profile-photo";
   story5.appendChild(storyPhoto5);
   const storyImg5 = document.createElement("img");
+  storyImg5.className = "profilePhoto";
   storyImg5.setAttribute("src", "/img/profile-16.jpg");
   storyImg5.setAttribute("alt", "User's story")
   story5.appendChild(storyImg5);
@@ -304,6 +316,7 @@ export const feed = () => {
   storyPhoto6.className = "profile-photo";
   story6.appendChild(storyPhoto6);
   const storyImg6 = document.createElement("img");
+  storyImg6.className = "profilePhoto";
   storyImg6.setAttribute("src", "/img/profile-20.jpg");
   storyImg6.setAttribute("alt", "User's story")
   story6.appendChild(storyImg6);
@@ -312,23 +325,295 @@ export const feed = () => {
   storyName6.textContent = "Goku";
   story6.appendChild(storyName6);
 
-  // Create post
+  // Create post form
   const createPost = document.createElement("form");
-  createPost.className = "createPost";
+  createPost.className = "create-post";
   middle.appendChild(createPost);
-  // profile img
+  /// profile img
   const divProfPh = document.createElement("div");
   divProfPh.className = "profile-photo";
   createPost.appendChild(divProfPh);
   const profileImg = document.createElement("img");
+  profileImg.className = "profilePhoto";
   profileImg.setAttribute("src", "/img/profile-1.jpg");
   divProfPh.appendChild(profileImg);
+  //create post
+  const postInput = document.createElement("input");
+  postInput.setAttribute("type", "text");
+  postInput.setAttribute("placeholder", "What's on your mind?");
+  createPost.appendChild(postInput);
+  // post buttom 
+  /*const submitBtn = document.createElement("input");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.setAttribute("value", "Post");
+  submitBtn.className = "btn btn-primary";
+  createPost.appenChild(submitBtn)*/
 
+  // feeds div
+  const feeds = document.createElement("div");
+  feeds.className = "feeds";
+  middle.appendChild(feeds);
+
+  // feed
+  const divFeed = document.createElement("div");
+  divFeed.className = "feed"
+  feeds.appendChild(divFeed);
+  // head 
+  const head = document.createElement("div");
+  head.className = "head"
+  divFeed.appendChild(head);
+  // user feed
+  const userFeed = document.createElement("div");
+  userFeed.className = "user"
+  head.appendChild(userFeed);
+  // profile photo
+  const photoFeed = document.createElement("div");
+  photoFeed.className = "profile-photo"
+  head.appendChild(photoFeed);
+  const profileImgFeed = document.createElement("img");
+  profileImgFeed.className = "profilePhoto";
+  profileImgFeed.setAttribute("src", "/img/profile-13.jpg");
+  photoFeed.appendChild(profileImgFeed);
+  // other info user
+  const userInfo = document.createElement("div");
+  userInfo.className = "info";
+  userFeed.appendChild(userInfo);
+  const usersName = document.createElement("h3")
+  usersName.textContent = "Lana Rose";
+  userInfo.appendChild(usersName);
+  const datePost = document.createElement("small")
+  datePost.textContent = "Dubai, 15 MINUTES AGO";
+  userInfo.appendChild(datePost);
+  // create icon edit post
+  const editIconDiv = document.createElement("span");
+  editIconDiv.className = "edit";
+  userFeed.appendChild(editIconDiv);
+  const editIcon = document.createElement("i");
+  editIcon.className = "uil uil-ellipsis-h";
+  editIconDiv.appendChild(editIcon);
+  // post photo
+  const postPhoto = document.createElement("div");
+  postPhoto.className = "photo";
+  divFeed.appendChild(postPhoto);
+  const postImg = document.createElement("img");
+  postImg.className = "profilePhoto";
+  postImg.setAttribute("src", "/img/feed-1.jpg");
+  postPhoto.appendChild(postImg);
+  // action buttons
+  const actionButtons = document.createElement("div");
+  actionButtons.className = "action-buttons"
+  divFeed.appendChild(actionButtons);
+  // interaction buttons
+  const interactionButtons = document.createElement("div");
+  interactionButtons.className = "interaction-buttons"
+  actionButtons.appendChild(interactionButtons);
+  //spans
+
+  //like
+  const spanLike = document.createElement("span");
+  interactionButtons.appendChild(spanLike);
+  const likeIcon = document.createElement("i");
+  likeIcon.className = "uil uil-heart";
+  spanLike.appendChild(likeIcon);
+  //comment
+  const spanComment = document.createElement("span");
+  interactionButtons.appendChild(spanComment);
+  const commentIcon = document.createElement("i");
+  commentIcon.className = "uil uil-comment";
+  spanComment.appendChild(commentIcon);
+  //share
+  const spanShare = document.createElement("span");
+  interactionButtons.appendChild(spanShare);
+  const shareIcon = document.createElement("i");
+  shareIcon.className = "uil uil-share";
+  spanShare.appendChild(shareIcon);
+  //save post  
+  const bookmark = document.createElement("div");
+  bookmark.className = "bookmark";
+  actionButtons.appendChild(bookmark);
+  const bookmarkSpan = document.createElement("span");
+  bookmark.appendChild(bookmarkSpan);
+  // save post btn
+  const bookmarkIcon = document.createElement("span");
+  bookmarkIcon.className = "uil uil-bookmark";
+  bookmarkSpan.appendChild(bookmarkIcon);
+  //liked by
+  const likedBy = document.createElement("div");
+  likedBy.className = "liked-by"
+  divFeed.appendChild(likedBy)
+  const likedSpan = document.createElement("span");
+  likedBy.appendChild(likedSpan);
+  // liked by photos
+  const likedByPhotos = document.createElement("img");
+  likedByPhotos.className = "profilePhoto";
+  likedByPhotos.setAttribute("src", "/img/profile-12.jpg");
+  likedSpan.appendChild(likedByPhotos);
+  const likedByPhotos2 = document.createElement("img");
+  likedByPhotos2.className = "profilePhoto";
+  likedByPhotos2.setAttribute("src", "/img/profile-4.jpg");
+  likedSpan.appendChild(likedByPhotos2);
+  const likedByPhotos3 = document.createElement("img");
+  likedByPhotos3.className = "profilePhoto";
+  likedByPhotos3.setAttribute("src", "/img/profile-2.jpg");
+  likedSpan.appendChild(likedByPhotos3);
+  // etiqueta <p>Liked by <b>Ernest Achiever</b> and <b> 2,400 others</b></p>
+  //lo anterior es hijo de likedBy
+
+
+  // description photo
+  const captionComments = document.createElement("div");
+  captionComments.className = "caption";
+  divFeed.appendChild(captionComments);
+  //aquí va <p><b>Lana Rose </b>lorem ipsum dolor sit quisquam eius.
+  //hijo de caption
+  const spanCaption = document.createElement("span");
+  captionComments.appendChild(spanCaption);
+  const hashtag = document.createElement("p")
+  hashtag.className = "harsh-tag"; //harshtag?
+  hashtag.textContent = "#lifestyle";
+  spanCaption.appendChild(hashtag);
+
+
+  //comments (muted)
+  const comments = document.createElement("div");
+  comments.className = "comments";
+  comments.className = "text-muted";
+  divFeed.appendChild(comments);
 
   // create right container
   const right = document.createElement("div");
   right.className = "right";
   feedContainer.appendChild(right);
+  // messages
+  const rightMessage = document.createElement("div");
+  rightMessage.className = "messages";
+  right.appendChild(rightMessage);
+  const heading = document.createElement("div");
+  heading.className = "heading";
+  rightMessage.appendChild(heading);
+  const textMessageRight = document.createElement("h4");
+  textMessageRight.textContent = "Messages";
+  heading.appendChild(textMessageRight);
+  // right message icon
+  const rightMessIcon = document.createElement("i");
+  rightMessIcon.className = "uil uil-edit";
+  heading.appendChild(rightMessIcon);
+
+  //message search bar
+  const searchMessage = document.createElement("div");
+  searchMessage.className = "search-bar";
+  heading.appendChild(searchMessage);
+  //icon 
+  const searchMessIcon = document.createElement("i");
+  searchMessIcon.className = "uil uil-search";
+  searchMessage.appendChild(searchMessIcon);
+
+  //  Input search Messages
+  const inputMessage = document.createElement("input");
+  inputMessage.setAttribute("type", "search");
+  inputMessage.setAttribute("placeholder", "Search messages");
+  inputMessage.setAttribute("id", "message-search");
+  searchMessage.appendChild(inputMessage);
+  // Message Category 
+  const categoryMessage = document.createElement("div");
+  categoryMessage.className = "category";
+  rightMessage.appendChild(categoryMessage);
+  // Message Active
+  const activeMesage = document.createElement("h6");
+  activeMesage.className = "active";
+  activeMesage.textContent = "Primary";
+  categoryMessage.appendChild(activeMesage);
+  // General
+  const general = document.createElement("h6");
+  general.textContent = "General";
+  categoryMessage.appendChild(general);
+  // Message request 
+  const messageRequest = document.createElement("h6");
+  messageRequest.className = "message-requests";
+  messageRequest.textContent = "Requests(7)";
+  categoryMessage.appendChild(messageRequest);
+  // Message photo
+  const messageDivPhoto = document.createElement("div");
+  messageDivPhoto.className = "message";
+  rightMessage.appendChild(messageDivPhoto);
+  // div Profile photo
+  const divProfilePhoto = document.createElement("div");
+  divProfilePhoto.className = "profile-photo";
+  messageDivPhoto.appendChild(divProfilePhoto);
+  // Photo message
+  const photoMessageimg = document.createElement("img");
+  photoMessageimg.className = "profilePhoto";
+  photoMessageimg.setAttribute("src", "/img/profile-10.jpg");
+  messageDivPhoto.appendChild(photoMessageimg);
+  // active
+  const divActive = document.createElement("div");
+  divActive.className = "active";
+  divProfilePhoto.appendChild(divActive);
+  //message body
+  const messageBody = document.createElement("div");
+  messageBody.className = "message-body";
+  rightMessage.appendChild(messageBody);
+  // message user
+  const messageUser = document.createElement("h5");
+  messageUser.textContent = "Edem Quist";
+  messageBody.appendChild(messageUser);
+  // message text
+  const messageText = document.createElement("p");
+  messageText.className = "text-muted";
+  messageText.textContent = "Just wake up bruh";
+  messageBody.appendChild(messageText);
+
+  //Friends request
+  const divFriendRequest = document.createElement("div");
+  divFriendRequest.className = "friend-request";
+  right.appendChild(divFriendRequest);
+  const requestTittle = document.createElement("h4");
+  requestTittle.textContent = "Requests";
+  divFriendRequest.appendChild(requestTittle);
+  // requests
+  const request = document.createElement("div");
+  request.className = "request";
+  divFriendRequest.appendChild(request);
+  //info request
+  const requestInfo = document.createElement("div");
+  requestInfo.className = "info";
+  request.appendChild(requestInfo);
+  // request photo
+  const requestPhoto = document.createElement("div");
+  requestPhoto.className = "profile-photo";
+  requestInfo.appendChild(requestPhoto);
+  const photoRequestimg = document.createElement("img");
+  photoRequestimg.setAttribute("src", "/img/profile-13.jpg");
+  requestPhoto.appendChild(photoRequestimg);
+  // friend request
+  const divRequestName = document.createElement("div");
+  requestInfo.appendChild(divRequestName);
+  const requestName = document.createElement("h5");
+  requestName.textContent = "Hajia Bintu";
+  divRequestName.appendChild(requestName); 
+  const requestMutual = document.createElement("p");
+  requestMutual.className = "text-muted";
+  requestMutual.textContent = "8 mutual friends";
+  divRequestName.appendChild(requestMutual); 
+  // buttons 
+  const requestActions = document.createElement("div");
+  requestActions.className = "action";
+  requestInfo.appendChild(requestActions); 
+  const requestAccept = document.createElement("button");
+  requestAccept.className = "btn btn-primary";
+  requestAccept.textContent = "Accept";
+  requestActions.appendChild(requestAccept);
+  const requestDecline = document.createElement("button");
+  requestDecline.className = "btn";
+  requestDecline.textContent = "Decline";
+  requestActions.appendChild(requestDecline);
+
+
+  
+
+
+
+
 
 
   return root;
