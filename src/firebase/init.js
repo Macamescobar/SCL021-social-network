@@ -13,7 +13,6 @@ import {
 
 import { firebaseConfig } from './firebaseConfig.js';
 
-
 // import {
 // getFirestore,
 // collection,
@@ -27,7 +26,10 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const providerFacebook = new FacebookAuthProvider(app);
 
+
 // const db = getFirestore(app);
+//const db = getFirestore(app);
+
 
 
 export {
@@ -46,4 +48,8 @@ export {
 	// db,
 	// collection,
 	// addDoc
+
+	/*db,
+	collection,
+	addDoc*/
 };

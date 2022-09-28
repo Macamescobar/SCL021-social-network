@@ -531,3 +531,31 @@ nav .create {
   gap: 32px;
 }
 
+.feed-container {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  color: var(--color-dark);
+  background: var(--color-light);
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.logo-nav,
+.img-nav {
+  width: 70px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.profile-photo {
+  width: 43px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img.profilePhoto {
+  display: block;
+  width: 100%;
+}
