@@ -14,7 +14,7 @@ export const feed = () => {
   containerNav.appendChild(nameLogo);
   //Crear img logo
   const imgLogo = document.createElement("img");
-  imgLogo.className= "img-nav";
+  imgLogo.className = "img-nav";
   imgLogo.setAttribute("src", "img/logo.png");
   nameLogo.appendChild(imgLogo);
   // Crear title de red social
@@ -138,15 +138,15 @@ export const feed = () => {
   iconNotification.className = "uil uil-bell";
   spanNotification.appendChild(iconNotification);
   // Create small Notification
-  const smallNotification = document.createElement("small");
+/*   const smallNotification = document.createElement("small");
   smallNotification.className = "notification-count";
   smallNotification.textContent = "9+";
-  iconNotification.appendChild(smallNotification);
+  iconNotification.appendChild(smallNotification); */
   //Create H3 Notification
   const textNotification = document.createElement("h3");
   textNotification.textContent = "Notification";
   aNotification.appendChild(textNotification);
-  // Create div popUp
+  /* // Create div popUp
   const divPopup = document.createElement("div");
   divPopup.className = "notifications-popup";
   aNotification.appendChild(divPopup);
@@ -175,7 +175,7 @@ export const feed = () => {
   const smallNotText = document.createElement("small");
   smallNotText.className = "text-muted"
   smallNotText.textContent = "2 DAYS AGO";
-  divNotBody.appendChild(smallNotText);
+  divNotBody.appendChild(smallNotText); */
   // Create a message notification
   const aNotMess = document.createElement("a");
   aNotMess.className = "menu-item";
@@ -343,11 +343,11 @@ export const feed = () => {
   postInput.setAttribute("placeholder", "What's on your mind?");
   createPost.appendChild(postInput);
   // post buttom 
-  /*const submitBtn = document.createElement("input");
+  const submitBtn = document.createElement("input");
   submitBtn.setAttribute("type", "submit");
   submitBtn.setAttribute("value", "Post");
   submitBtn.className = "btn btn-primary";
-  createPost.appenChild(submitBtn)*/
+  createPost.appendChild(submitBtn)
 
   // feeds div
   const feeds = document.createElement("div");
@@ -590,15 +590,15 @@ export const feed = () => {
   requestInfo.appendChild(divRequestName);
   const requestName = document.createElement("h5");
   requestName.textContent = "Hajia Bintu";
-  divRequestName.appendChild(requestName); 
+  divRequestName.appendChild(requestName);
   const requestMutual = document.createElement("p");
   requestMutual.className = "text-muted";
   requestMutual.textContent = "8 mutual friends";
-  divRequestName.appendChild(requestMutual); 
+  divRequestName.appendChild(requestMutual);
   // buttons 
   const requestActions = document.createElement("div");
   requestActions.className = "action";
-  requestInfo.appendChild(requestActions); 
+  requestInfo.appendChild(requestActions);
   const requestAccept = document.createElement("button");
   requestAccept.className = "btn btn-primary";
   requestAccept.textContent = "Accept";
@@ -607,14 +607,6 @@ export const feed = () => {
   requestDecline.className = "btn";
   requestDecline.textContent = "Decline";
   requestActions.appendChild(requestDecline);
-
-
-  
-
-
-
-
-
 
 
   return root;
