@@ -7,9 +7,9 @@ import {
 	signInWithPopup,
 	signInWithRedirect,
 	getRedirectResult,
-	FacebookAuthProvider
-}
-	from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+	FacebookAuthProvider,
+	signOut
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import { firebaseConfig } from './firebaseConfig.js';
 
@@ -43,7 +43,8 @@ export {
 	signInWithRedirect,
 	getRedirectResult,
 	FacebookAuthProvider,
-	providerFacebook
+	providerFacebook,
+	signOut
 
 	// db,
 	// collection,
