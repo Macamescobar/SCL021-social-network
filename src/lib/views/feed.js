@@ -1,3 +1,6 @@
+import { logOut } from "../../firebase/auth.js";
+
+
 export const feed = () => {
   const root = document.createElement("div");
   root.className = "feed-container";
@@ -54,13 +57,18 @@ export const feed = () => {
 
   //Create logout icon
 
-  const logOut = document.createElement("div");
-  logOut.className = "logOut-div";
-  divProfileNav.appendChild(logOut);
+  const logOutDiv = document.createElement("div");
+  logOutDiv.className = "logOut-div";
+  divProfileNav.appendChild(logOutDiv);
 
   const iconLogOut = document.createElement("i");
   iconLogOut.className = "fa-solid fa-right-from-bracket fa-2x";
-  logOut.appendChild(iconLogOut);
+  logOutDiv.appendChild(iconLogOut);
+  // Evento para salir de la APP
+  iconLogOut.addEventListener("click", () => {
+		console.log('hola hola');
+    logOut()
+  });
 
   ////////////////////////////////     MAIN       ///////////////////////////
   //  Crear etiqueta main

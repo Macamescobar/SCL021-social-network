@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   FacebookAuthProvider,
   providerFacebook,
+  signOut
 } from "./init.js";
 
 //Función de promesa para CREAR usuario con email y contraseña
@@ -93,36 +94,39 @@ export const accessGoogle = () => {
     });
 };
 
-
 export const loginWithFacebook = () => {
   signInWithPopup(auth, providerFacebook)
-  .then((result) => {
-    // The signed-in user info.
-    const user = result.user;
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const credential = FacebookAuthProvider.credentialFromResult(result);
-    console.log(credential);
-    const accessToken = credential.accessToken;
+    .then((result) => {
+      // The signed-in user info.
+      const user = result.user;
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      console.log(credential);
+      const accessToken = credential.accessToken;
 
-    // ...
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = FacebookAuthProvider.credentialFromError(error);
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
 
-    // ...
-  });
-}
+      // ...
+    });
+};
 
-// Signout 
-
-// signOut(auth).then(() => {
-//   // Sign-out successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
+// Log out
+export const logOut = () => {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      location.hash = "#/login"
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+};
