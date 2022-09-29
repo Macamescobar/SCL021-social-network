@@ -157,10 +157,10 @@ export const feed = () => {
   iconNotification.className = "fa-solid fa-bell fa-lg";
   spanNotification.appendChild(iconNotification);
   // Create small Notification
-/*   const smallNotification = document.createElement("small");
+  const smallNotification = document.createElement("small");
   smallNotification.className = "notification-count";
   smallNotification.textContent = "9+";
-  iconNotification.appendChild(smallNotification); */
+  iconNotification.appendChild(smallNotification);
   //Create H3 Notification
   const textNotification = document.createElement("h3");
   textNotification.textContent = "Notification";
@@ -195,7 +195,6 @@ export const feed = () => {
   // smallNotText.className = "text-muted"
   // smallNotText.textContent = "2 DAYS AGO";
   // divNotBody.appendChild(smallNotText);
-
   // Create a message notification
   const aNotMess = document.createElement("a");
   aNotMess.className = "menu-item";

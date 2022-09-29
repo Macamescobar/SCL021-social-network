@@ -9,15 +9,17 @@ import {
 	getRedirectResult,
 	FacebookAuthProvider,
 	signOut
+/* 	collection,
+	query,
+	onSnapshot */
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import { firebaseConfig } from './firebaseConfig.js';
 
-// import {
-// getFirestore,
-// collection,
-// addDoc
-// } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"
+/* import { collection, 
+	query, 
+	onSnapshot 
+} from "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" */
 
 
 
@@ -25,7 +27,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const providerFacebook = new FacebookAuthProvider(app);
-
+//const db = getFirestore(app);
 
 // const db = getFirestore(app);
 //const db = getFirestore(app);
@@ -44,6 +46,7 @@ export {
 	getRedirectResult,
 	FacebookAuthProvider,
 	providerFacebook,
+	//db,
 	signOut
 
 	// db,
