@@ -1,4 +1,5 @@
 import { logOut } from "../../firebase/auth.js";
+import {createPost as createPostFunction} from "../../firebase/firestore.js"
 
 
 export const feed = () => {
@@ -366,6 +367,11 @@ export const feed = () => {
   submitBtn.setAttribute("value", "Post");
   submitBtn.className = "btn btn-primary";
   createPost.appendChild(submitBtn);
+  //Evento create post
+  createPost.addEventListener('submit',(e) =>{
+   e.preventDefault();
+   createPostFunction(postInput.value)
+  })
 
   // feeds div
   const feeds = document.createElement("div");
