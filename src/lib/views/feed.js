@@ -619,49 +619,6 @@ export const feed = () => {
   requestDecline.textContent = "Decline";
   requestActions.appendChild(requestDecline);
 
-
-
-
-
-  //  Input search Messages
-  const inputMessage = document.createElement("input");
-  inputMessage.setAttribute("type", "search");
-  inputMessage.setAttribute("placeholder", "Search messages");
-  inputMessage.setAttribute("id", "message-search");
-  searchMessage.appendChild(inputMessage);
-  // Message Category 
-  const categoryMessage = document.createElement("div");
-  categoryMessage.className = "category";
-  rightMessage.appendChild(categoryMessage);
-  // Message Active
-  const activeMesage = document.createElement("h6");
-  activeMesage.className = "active";
-  activeMesage.textContent = "Primary";
-  categoryMessage.appendChild(activeMesage);
-  // General
-  const general = document.createElement("h6");
-  general.textContent = "General";
-  categoryMessage.appendChild(general);
-  // Message request 
-  const messageRequest = document.createElement("h6");
-  messageRequest.className = "message-requests";
-  messageRequest.textContent = "Requests(7)";
-  categoryMessage.appendChild(messageRequest);
-  // Message photo
-  const messageDivPhoto = document.createElement("div");
-  messageDivPhoto.className = "message";
-  rightMessage.appendChild(messageDivPhoto);
-  // div Profile photo
-  const divProfilePhoto = document.createElement("div");
-  divProfilePhoto.className = "profile-photo";
-  messageDivPhoto.appendChild(divProfilePhoto);
-  // Photo message
-  const photoMessageimg = document.createElement("img");
-  photoMessageimg.className = "profilePhoto";
-  photoMessageimg.setAttribute("src", "/img/profile-10.jpg");
-  messageDivPhoto.appendChild(photoMessageimg);
-  //linea 227
-
   return root;
 };
 console.log(feed);
