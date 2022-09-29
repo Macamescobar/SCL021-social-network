@@ -14,12 +14,12 @@ export const feed = () => {
   containerNav.appendChild(nameLogo);
   //Crear img logo
   const imgLogo = document.createElement("img");
-  imgLogo.className= "img-nav";
+  imgLogo.className = "img-nav";
   imgLogo.setAttribute("src", "img/logo-feed.png");
   nameLogo.appendChild(imgLogo);
   // Crear title de red social
   const title = document.createElement("h3");
-  title.className = "text-dishared"
+  title.className = "text-dishared";
   title.innerText = "diShared";
   nameLogo.appendChild(title);
   // Crear div para input de búsqueda
@@ -39,9 +39,9 @@ export const feed = () => {
   //Div with photo and log out
 
   const divProfileNav = document.createElement("div");
-  divProfileNav.className = "divNav"
+  divProfileNav.className = "divNav";
   containerNav.appendChild(divProfileNav);
- 
+
   // Crear div con img de perfil
   const divProfile = document.createElement("div");
   divProfile.className = "profile-photo";
@@ -100,7 +100,9 @@ export const feed = () => {
   username.className = "text-muted";
   handle.appendChild(username);
   username.setAttribute("text", "@Rosita");
+
   ///////////////////////      SIDEBAR /////////////////
+
   const sidebar = document.createElement("div");
   sidebar.className = "sidebar";
   sidebarleft.appendChild(sidebar);
@@ -193,7 +195,7 @@ export const feed = () => {
   // Create span message notification
   const spanMessage = document.createElement("span");
   aNotMess.appendChild(spanMessage);
-  // Create icon Message 
+  // Create icon Message
   const iconMessage = document.createElement("i");
   iconMessage.className = "fa-solid fa-envelope fa-lg";
   spanMessage.appendChild(iconMessage);
@@ -202,10 +204,10 @@ export const feed = () => {
   smallNotMessage.className = "notification-count";
   smallNotMessage.textContent = "6";
   iconMessage.appendChild(smallNotMessage);
-  // Create h3 Message 
+  // Create h3 Message
   const textMessage = document.createElement("h3");
   textMessage.className = "Messages";
-  textMessage.textContent = "Messages"
+  textMessage.textContent = "Messages";
   aNotMess.appendChild(textMessage);
 
   // middle container
@@ -237,7 +239,6 @@ export const feed = () => {
   // storyName.className = "storyName";
   // storyName.textContent = "Your story";
   // story.appendChild(storyName);
-
 
   // // story2 container
   // const story2 = document.createElement("div");
@@ -351,7 +352,7 @@ export const feed = () => {
   postInput.setAttribute("type", "text");
   postInput.setAttribute("placeholder", "What's on your mind?");
   createPost.appendChild(postInput);
-  // post buttom 
+  // post buttom
   const submitBtn = document.createElement("input");
   submitBtn.setAttribute("type", "submit");
   submitBtn.setAttribute("value", "Post");
@@ -365,19 +366,19 @@ export const feed = () => {
 
   // feed
   const divFeed = document.createElement("div");
-  divFeed.className = "feed"
+  divFeed.className = "feed";
   feeds.appendChild(divFeed);
-  // head 
+  // head
   const head = document.createElement("div");
-  head.className = "head"
+  head.className = "head";
   divFeed.appendChild(head);
   // user feed
   const userFeed = document.createElement("div");
-  userFeed.className = "user"
+  userFeed.className = "user";
   head.appendChild(userFeed);
   // profile photo
   const photoFeed = document.createElement("div");
-  photoFeed.className = "profile-photo"
+  photoFeed.className = "profile-photo";
   userFeed.appendChild(photoFeed);
   const profileImgFeed = document.createElement("img");
   profileImgFeed.className = "profilePhoto";
@@ -387,10 +388,10 @@ export const feed = () => {
   const userInfo = document.createElement("div");
   userInfo.className = "info";
   userFeed.appendChild(userInfo);
-  const usersName = document.createElement("h3")
+  const usersName = document.createElement("h3");
   usersName.textContent = "Lana Rose";
   userInfo.appendChild(usersName);
-  const datePost = document.createElement("small")
+  const datePost = document.createElement("small");
   datePost.textContent = "Dubai, 15 MINUTES AGO";
   userInfo.appendChild(datePost);
   // create icon edit post
@@ -409,11 +410,11 @@ export const feed = () => {
   postPhoto.appendChild(postImg);
   // action buttons
   const actionButtons = document.createElement("div");
-  actionButtons.className = "action-buttons"
+  actionButtons.className = "action-buttons";
   divFeed.appendChild(actionButtons);
   // interaction buttons
   const interactionButtons = document.createElement("div");
-  interactionButtons.className = "interaction-buttons"
+  interactionButtons.className = "interaction-buttons";
   actionButtons.appendChild(interactionButtons);
   //spans
 
@@ -435,7 +436,7 @@ export const feed = () => {
   const shareIcon = document.createElement("i");
   shareIcon.className = "fa-solid fa-share";
   spanShare.appendChild(shareIcon);
-  //save post  
+  //save post
   const bookmark = document.createElement("div");
   bookmark.className = "bookmark";
   actionButtons.appendChild(bookmark);
@@ -447,8 +448,8 @@ export const feed = () => {
   bookmarkSpan.appendChild(bookmarkIcon);
   //liked by
   const likedBy = document.createElement("div");
-  likedBy.className = "liked-by"
-  divFeed.appendChild(likedBy)
+  likedBy.className = "liked-by";
+  divFeed.appendChild(likedBy);
   const likedSpan = document.createElement("span");
   likedBy.appendChild(likedSpan);
   // liked by photos
@@ -469,7 +470,7 @@ export const feed = () => {
 
   // feeds
   const divFeeds = document.createElement("div");
-  divFeeds.className("feeds");
+  divFeeds.className = "feeds";
   middle.appendChild(divFeeds);
 
   // description photo
@@ -480,11 +481,10 @@ export const feed = () => {
   //hijo de caption
   const spanCaption = document.createElement("span");
   captionComments.appendChild(spanCaption);
-  const hashtag = document.createElement("p")
+  const hashtag = document.createElement("p");
   hashtag.className = "harsh-tag"; //harshtag?
   hashtag.textContent = "#lifestyle";
   spanCaption.appendChild(hashtag);
-
 
   //comments (muted)
   const comments = document.createElement("div");
@@ -515,7 +515,7 @@ export const feed = () => {
   const searchMessage = document.createElement("div");
   searchMessage.className = "search-bar";
   heading.appendChild(searchMessage);
-  //icon 
+  //icon
   const searchMessIcon = document.createElement("i");
   searchMessIcon.className = "uil uil-search";
   searchMessage.appendChild(searchMessIcon);
@@ -526,7 +526,7 @@ export const feed = () => {
   inputMessage.setAttribute("placeholder", "Search messages");
   inputMessage.setAttribute("id", "message-search");
   searchMessage.appendChild(inputMessage);
-  // Message Category 
+  // Message Category
   const categoryMessage = document.createElement("div");
   categoryMessage.className = "category";
   rightMessage.appendChild(categoryMessage);
@@ -539,7 +539,7 @@ export const feed = () => {
   const general = document.createElement("h6");
   general.textContent = "General";
   categoryMessage.appendChild(general);
-  // Message request 
+  // Message request
   const messageRequest = document.createElement("h6");
   messageRequest.className = "message-requests";
   messageRequest.textContent = "Requests(7)";
@@ -601,19 +601,22 @@ export const feed = () => {
   requestInfo.appendChild(divRequestName);
   const requestName = document.createElement("h5");
   requestName.textContent = "Hajia Bintu";
-  divRequestName.appendChild(requestName); 
+  divRequestName.appendChild(requestName);
+  //Text muted
   const requestMutual = document.createElement("p");
   requestMutual.className = "text-muted";
   requestMutual.textContent = "8 mutual friends";
-  divRequestName.appendChild(requestMutual); 
-  // buttons 
+  divRequestName.appendChild(requestMutual);
+  // buttons
   const requestActions = document.createElement("div");
   requestActions.className = "action";
-  request.appendChild(requestActions); 
+  request.appendChild(requestActions);
+  //Button accept
   const requestAccept = document.createElement("button");
   requestAccept.className = "btn btn-primary";
   requestAccept.textContent = "Accept";
   requestActions.appendChild(requestAccept);
+  //Button decline
   const requestDecline = document.createElement("button");
   requestDecline.className = "btn";
   requestDecline.textContent = "Decline";
