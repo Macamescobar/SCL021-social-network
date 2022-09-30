@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   FacebookAuthProvider,
   providerFacebook,
+  //db,
   signOut
 } from "./init.js";
 
@@ -118,6 +119,23 @@ export const loginWithFacebook = () => {
       // ...
     });
 };
+
+
+// collection 
+
+/* const getCollection = () => {
+
+  const query = query(collection(db, "posts"));
+  const unsubscribe = onSnapshot(query, (querySnapshot) => {
+     const myPosts = [];
+     querySnapshot.forEach((doc) => {
+     myPosts.push(doc.data().name);
+  });
+  console.log("Current cities in CA: ", cities.join(", "));
+});
+
+} */
+
 
 // Log out
 export const logOut = () => {
