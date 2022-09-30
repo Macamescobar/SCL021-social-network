@@ -16,10 +16,13 @@ import {
 
 import { firebaseConfig } from './firebaseConfig.js';
 
-/* import { collection, 
-	query, 
-	onSnapshot 
-} from "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" */
+
+import {
+getFirestore,
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
+
 
 
 
@@ -29,8 +32,7 @@ const provider = new GoogleAuthProvider(app);
 const providerFacebook = new FacebookAuthProvider(app);
 //const db = getFirestore(app);
 
-// const db = getFirestore(app);
-//const db = getFirestore(app);
+const db = getFirestore(app);
 
 
 
@@ -46,14 +48,8 @@ export {
 	getRedirectResult,
 	FacebookAuthProvider,
 	providerFacebook,
-	//db,
-	signOut
-
-	// db,
+	signOut,
+	db
 	// collection,
 	// addDoc
-
-	/*db,
-	collection,
-	addDoc*/
 };
