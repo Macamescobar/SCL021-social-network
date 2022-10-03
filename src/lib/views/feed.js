@@ -1,5 +1,5 @@
 import { logOut } from "../../firebase/auth.js";
-import {createPost as createPostFunction} from "../../firebase/firestore.js"
+import {createPost as createPostFunction, printPost} from "../../firebase/firestore.js"
 
 
 export const feed = () => {
@@ -361,6 +361,10 @@ export const feed = () => {
   postInput.setAttribute("type", "text");
   postInput.setAttribute("placeholder", "What's on your mind?");
   createPost.appendChild(postInput);
+  // add image
+  const createImage= document.createElement("i");
+  createImage.className="fa-regular fa-image fa-1x";
+  createPost.appendChild(createImage)
   // post buttom
   const submitBtn = document.createElement("input");
   submitBtn.setAttribute("type", "submit");
@@ -370,7 +374,10 @@ export const feed = () => {
   //Evento create post
   createPost.addEventListener('submit',(e) =>{
    e.preventDefault();
+   const userPost = document.getElementById("timelime");
    createPostFunction(postInput.value)
+   printPost(userPost);
+
   })
 
   // feeds div
@@ -505,7 +512,11 @@ export const feed = () => {
   comments.className = "comments";
   comments.className = "text-muted";
   divFeed.appendChild(comments);
-
+  //CONTENEDOR PARA POST CREADOS///////////////77
+  const timelimeContainer = document.createElement("div");
+  timelimeContainer.classList.add("timelimeContainer");
+  timelimeContainer.setAttribute("id", "timelime");
+  feeds.appendChild(timelimeContainer);
   // create right container
   const right = document.createElement("div");
   right.className = "right";
