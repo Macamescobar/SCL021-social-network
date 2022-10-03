@@ -1,4 +1,4 @@
-import { signInFunction, accessGoogle, loginWithFacebook } from "../../firebase/auth.js";
+import { signInFunction, accessGoogle, loginWithFacebook, resetPass } from "../../firebase/auth.js";
 
 export const createLogin = () => {
 
@@ -171,12 +171,27 @@ export const createLogin = () => {
   yourPassword.className = "registered";
   yourPassword.innerText = "Forgot your  ";
   formContainer.appendChild(yourPassword);
+
   const forgotPassword = document.createElement("a");
   forgotPassword.className = "href";
   forgotPassword.setAttribute("href", "#");
   forgotPassword.setAttribute("id", "forgot-password");
   forgotPassword.innerText = " Password?";
   yourPassword.appendChild(forgotPassword);
+  forgotPassword.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('user-email').value;
+    const alertaReset = (valid) => {
+      if (valid) {
+        // usar lo que retorna la resetemail
+        //  alert('Hemos enviado un email para que recuperes tu contraseña! Si no lo encuentras,
+        //  revisa en spam e intenta ingresar de nuevo');
+      } /* else {
+        //  alert('Tu usuario no ha sido verificado, intenta con otro correo');
+      } */
+    };
+    resetPass(email, alertaReset);
+  });
   //Creando contenedor del plato
   const platecontainer = document.createElement("div");
   platecontainer.className = "plate-container";

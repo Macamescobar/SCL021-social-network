@@ -1,30 +1,27 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import {
-	getAuth,
-	signInWithEmailAndPassword,
-	createUserWithEmailAndPassword,
-	GoogleAuthProvider,
-	signInWithPopup,
-	signInWithRedirect,
-	getRedirectResult,
-	FacebookAuthProvider,
-	signOut
-/* 	collection,
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  FacebookAuthProvider,
+  signOut,
+  sendPasswordResetEmail,
+  /* 	collection,
 	query,
 	onSnapshot */
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
-import { firebaseConfig } from './firebaseConfig.js';
-
+import { firebaseConfig } from "./firebaseConfig.js";
 
 import {
-getFirestore,
-collection,
-addDoc
-} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
-
-
-
+  getFirestore,
+  collection,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -34,22 +31,22 @@ const providerFacebook = new FacebookAuthProvider(app);
 
 const db = getFirestore(app);
 
-
-
 export {
-	initializeApp,
-	signInWithEmailAndPassword,
-	auth,
-	createUserWithEmailAndPassword,
-	GoogleAuthProvider,
-	signInWithPopup,
-	provider,
-	signInWithRedirect,
-	getRedirectResult,
-	FacebookAuthProvider,
-	providerFacebook,
-	signOut,
-	db
-	// collection,
-	// addDoc
+  initializeApp,
+  signInWithEmailAndPassword,
+  auth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  provider,
+  signInWithRedirect,
+  getRedirectResult,
+  FacebookAuthProvider,
+  providerFacebook,
+  signOut,
+  db,
+  sendPasswordResetEmail,
+
+  // collection,
+  // addDoc
 };
