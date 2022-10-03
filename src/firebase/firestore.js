@@ -2,43 +2,46 @@ import { db, auth } from "./init.js";
 import {
   collection,
   addDoc,
-  Timestamp,getDocs
+  onSnapshot,
+  getDocs,
+  Timestamp,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
-
-const createPost = async (content) => {
-    const docRef = await addDoc(collection(db, "Posts"), {
-      text: content,
-      date: Timestamp.fromDate(new Date()),
-      userName: auth.currentUser.displayName,
-      likes: [],
-    });
-    console.log("Document written with ID: ", docRef.id);
-};
-const printPost = async (userPost) => {
-  const querySnapshot = await getDocs(collection(db, "Post"));
-  userPost.innerHTML = "";
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().text}`);
-    userPost.innerHTML += `            
-    <div class="head">
-      <div class="user">
-        <div class="profile-photo">
-          <img src="/img/profile-13.jpg">
+// const createPost = async(content) => {
+//     try {
+//         const docRef = await addDoc(collection(db, “Posts”), {
+//           post: content
+//         });
+//         console.log(docRef.id);
+//       } catch (e) {
+//         console.error(“Error adding document: “, e);
+//       }
+// }
+//  export {createPost}
+window.addEventListener("DOMContentLoaded", async () => {
+  onGetSnapShot((querySnapshot) => {
+    let html = "";
+    const containerFeed = document.querySelector(".feeds");
+    querySnapshot.forEach((doc) => {
+      // console.log(doc.data());
+      const post = doc.data();
+      html += `
+      <div class='containerPost'>
+        <div class="feed">
+        <div class="head">
+         <div class="user">
+         <div class="profile-photo">
+           <img src="/img/profile-13.jpg">
+         </div>
+         <div class="info">
+         <h3> ${post.userName} </h3>
+         <small> ${post.date} </small>
+         </div>
         </div>
-        <div class="info">
-          <h3> ${doc.data().userName} </h3>
-          <small> ${doc.data().date} </small>
-        </div>
-      </div>
-      <span class="edit">
+       <span class="edit">
         <i class="fa-solid fa-ellipsis fa-2x"></i>
-      </span>
-    </div>
-    <div class="photo">
-      <img src="/img/feed-1.jpg">
-    </div>
-
-    <div class="action-buttons">
+        </span>
+      </div>
+     <div class="action-buttons">
       <div class="interaction-buttons">
         <span><i class="fa-solid fa-heart"></i></span>
         <span><i class="fa-regular fa-comment"></i></span>
@@ -47,13 +50,24 @@ const printPost = async (userPost) => {
       <div class="bookmark">
         <span<i class="uil uil-bookmark"></i></span>
       </div>
-    </div>
-
-    <div class="caption">
-      <p><b>${doc.data().userName}</b>${doc.data().text}.
-    
-  `;
+      </div>
+      <p><b> ${post.userName} </b>${post.description}
+      </div>
+     </div>
+      `;
+      containerFeed.innerHTML = html;
+    });
+  });
+});
+export const savePost = (description) => {
+  addDoc(collection(db, "Posts"), {
+    description,
+    date: Timestamp.fromDate(new Date()),
+    userName:
+      auth.currentUser.displayName != null
+        ? auth.currentUser.displayName
+        : auth.currentUser.email,
   });
 };
-
-export { createPost, printPost };
+export const onGetSnapShot = (callback) =>
+  onSnapshot(collection(db, "Posts"), callback);

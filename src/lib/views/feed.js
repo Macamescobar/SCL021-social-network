@@ -1,6 +1,5 @@
 import { logOut } from "../../firebase/auth.js";
-import {createPost as createPostFunction, printPost} from "../../firebase/firestore.js"
-
+import { savePost } from "../../firebase/firestore.js";
 
 export const feed = () => {
   const root = document.createElement("div");
@@ -67,8 +66,8 @@ export const feed = () => {
   logOutDiv.appendChild(iconLogOut);
   // Evento para salir de la APP
   iconLogOut.addEventListener("click", () => {
-		console.log('hola hola');
-    logOut()
+    console.log("hola hola");
+    logOut();
   });
 
   ////////////////////////////////     MAIN       ///////////////////////////
@@ -358,13 +357,10 @@ export const feed = () => {
   divProfPh.appendChild(profileImg);
   //create post
   const postInput = document.createElement("input");
+  postInput.className = "text-input";
   postInput.setAttribute("type", "text");
   postInput.setAttribute("placeholder", "What's on your mind?");
   createPost.appendChild(postInput);
-  // add image
-  const createImage= document.createElement("i");
-  createImage.className="fa-regular fa-image fa-1x";
-  createPost.appendChild(createImage)
   // post buttom
   const submitBtn = document.createElement("input");
   submitBtn.setAttribute("type", "submit");
@@ -372,13 +368,14 @@ export const feed = () => {
   submitBtn.className = "btn btn-primary";
   createPost.appendChild(submitBtn);
   //Evento create post
-  createPost.addEventListener('submit',(e) =>{
-   e.preventDefault();
-   const userPost = document.getElementById("timelime");
-   createPostFunction(postInput.value)
-   printPost(userPost);
-
-  })
+  createPost.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const textPost = document.querySelector(".text-input");
+    //  createPostFunction(postInput.value)
+    console.log(textPost.value);
+    savePost(textPost.value);
+    // para resetear el input de texto createPost.reset();
+  });
 
   // feeds div
   const feeds = document.createElement("div");
@@ -389,103 +386,103 @@ export const feed = () => {
   const divFeed = document.createElement("div");
   divFeed.className = "feed";
   feeds.appendChild(divFeed);
-  // head
-  const head = document.createElement("div");
-  head.className = "head";
-  divFeed.appendChild(head);
-  // user feed
-  const userFeed = document.createElement("div");
-  userFeed.className = "user";
-  head.appendChild(userFeed);
-  // profile photo
-  const photoFeed = document.createElement("div");
-  photoFeed.className = "profile-photo";
-  userFeed.appendChild(photoFeed);
-  const profileImgFeed = document.createElement("img");
-  profileImgFeed.className = "profilePhoto";
-  profileImgFeed.setAttribute("src", "/img/profile-13.jpg");
-  photoFeed.appendChild(profileImgFeed);
-  // other info user
-  const userInfo = document.createElement("div");
-  userInfo.className = "info";
-  userFeed.appendChild(userInfo);
-  const usersName = document.createElement("h3");
-  usersName.textContent = "Lana Rose";
-  userInfo.appendChild(usersName);
-  const datePost = document.createElement("small");
-  datePost.textContent = "Dubai, 15 MINUTES AGO";
-  userInfo.appendChild(datePost);
-  // create icon edit post
-  const editIconDiv = document.createElement("span");
-  editIconDiv.className = "edit";
-  head.appendChild(editIconDiv);
-  const editIcon = document.createElement("i");
-  editIcon.className = "fa-solid fa-ellipsis fa-2x";
-  editIconDiv.appendChild(editIcon);
-  // post photo
-  const postPhoto = document.createElement("div");
-  postPhoto.className = "photo";
-  divFeed.appendChild(postPhoto);
-  const postImg = document.createElement("img");
-  postImg.setAttribute("src", "/img/feed-1.jpg");
-  postPhoto.appendChild(postImg);
-  // action buttons
-  const actionButtons = document.createElement("div");
-  actionButtons.className = "action-buttons";
-  divFeed.appendChild(actionButtons);
-  // interaction buttons
-  const interactionButtons = document.createElement("div");
-  interactionButtons.className = "interaction-buttons";
-  actionButtons.appendChild(interactionButtons);
-  //spans
+  // // head
+  // const head = document.createElement("div");
+  // head.className = "head";
+  // divFeed.appendChild(head);
+  // // user feed
+  // const userFeed = document.createElement("div");
+  // userFeed.className = "user";
+  // head.appendChild(userFeed);
+  // // profile photo
+  // const photoFeed = document.createElement("div");
+  // photoFeed.className = "profile-photo";
+  // userFeed.appendChild(photoFeed);
+  // const profileImgFeed = document.createElement("img");
+  // profileImgFeed.className = "profilePhoto";
+  // profileImgFeed.setAttribute("src", "/img/profile-13.jpg");
+  // photoFeed.appendChild(profileImgFeed);
+  // // other info user
+  // const userInfo = document.createElement("div");
+  // userInfo.className = "info";
+  // userFeed.appendChild(userInfo);
+  // const usersName = document.createElement("h3");
+  // usersName.textContent = "Lana Rose";
+  // userInfo.appendChild(usersName);
+  // const datePost = document.createElement("small");
+  // datePost.textContent = "Dubai, 15 MINUTES AGO";
+  // userInfo.appendChild(datePost);
+  // // create icon edit post
+  // const editIconDiv = document.createElement("span");
+  // editIconDiv.className = "edit";
+  // head.appendChild(editIconDiv);
+  // const editIcon = document.createElement("i");
+  // editIcon.className = "fa-solid fa-ellipsis fa-2x";
+  // editIconDiv.appendChild(editIcon);
+  // // post photo
+  // const postPhoto = document.createElement("div");
+  // postPhoto.className = "photo";
+  // divFeed.appendChild(postPhoto);
+  // const postImg = document.createElement("img");
+  // postImg.setAttribute("src", "/img/feed-1.jpg");
+  // postPhoto.appendChild(postImg);
+  // // action buttons
+  // const actionButtons = document.createElement("div");
+  // actionButtons.className = "action-buttons";
+  // divFeed.appendChild(actionButtons);
+  // // interaction buttons
+  // const interactionButtons = document.createElement("div");
+  // interactionButtons.className = "interaction-buttons";
+  // actionButtons.appendChild(interactionButtons);
+  // //spans
 
-  //like
-  const spanLike = document.createElement("span");
-  interactionButtons.appendChild(spanLike);
-  const likeIcon = document.createElement("i");
-  likeIcon.className = "fa-solid fa-heart";
-  spanLike.appendChild(likeIcon);
-  //comment
-  const spanComment = document.createElement("span");
-  interactionButtons.appendChild(spanComment);
-  const commentIcon = document.createElement("i");
-  commentIcon.className = "fa-regular fa-comment";
-  spanComment.appendChild(commentIcon);
+  // //like
+  // const spanLike = document.createElement("span");
+  // interactionButtons.appendChild(spanLike);
+  // const likeIcon = document.createElement("i");
+  // likeIcon.className = "fa-solid fa-heart";
+  // spanLike.appendChild(likeIcon);
+  // //comment
+  // const spanComment = document.createElement("span");
+  // interactionButtons.appendChild(spanComment);
+  // const commentIcon = document.createElement("i");
+  // commentIcon.className = "fa-regular fa-comment";
+  // spanComment.appendChild(commentIcon);
   //share
-  const spanShare = document.createElement("span");
-  interactionButtons.appendChild(spanShare);
-  const shareIcon = document.createElement("i");
-  shareIcon.className = "fa-solid fa-share";
-  spanShare.appendChild(shareIcon);
-  //save post
-  const bookmark = document.createElement("div");
-  bookmark.className = "bookmark";
-  actionButtons.appendChild(bookmark);
-  const bookmarkSpan = document.createElement("span");
-  bookmark.appendChild(bookmarkSpan);
-  // save post btn
-  const bookmarkIcon = document.createElement("span");
-  bookmarkIcon.className = "fa-solid fa-bookmark";
-  bookmarkSpan.appendChild(bookmarkIcon);
-  //liked by
-  const likedBy = document.createElement("div");
-  likedBy.className = "liked-by";
-  divFeed.appendChild(likedBy);
-  const likedSpan = document.createElement("span");
-  likedBy.appendChild(likedSpan);
-  // liked by photos
-  const likedByPhotos = document.createElement("img");
-  likedByPhotos.className = "profilePhoto";
-  likedByPhotos.setAttribute("src", "/img/profile-12.jpg");
-  likedSpan.appendChild(likedByPhotos);
-  const likedByPhotos2 = document.createElement("img");
-  likedByPhotos2.className = "profilePhoto";
-  likedByPhotos2.setAttribute("src", "/img/profile-4.jpg");
-  likedSpan.appendChild(likedByPhotos2);
-  const likedByPhotos3 = document.createElement("img");
-  likedByPhotos3.className = "profilePhoto";
-  likedByPhotos3.setAttribute("src", "/img/profile-2.jpg");
-  likedSpan.appendChild(likedByPhotos3);
+  // const spanShare = document.createElement("span");
+  // interactionButtons.appendChild(spanShare);
+  // const shareIcon = document.createElement("i");
+  // shareIcon.className = "fa-solid fa-share";
+  // spanShare.appendChild(shareIcon);
+  // //save post
+  // const bookmark = document.createElement("div");
+  // bookmark.className = "bookmark";
+  // actionButtons.appendChild(bookmark);
+  // const bookmarkSpan = document.createElement("span");
+  // bookmark.appendChild(bookmarkSpan);
+  // // save post btn
+  // const bookmarkIcon = document.createElement("span");
+  // bookmarkIcon.className = "fa-solid fa-bookmark";
+  // bookmarkSpan.appendChild(bookmarkIcon);
+  // //liked by
+  // const likedBy = document.createElement("div");
+  // likedBy.className = "liked-by";
+  // divFeed.appendChild(likedBy);
+  // const likedSpan = document.createElement("span");
+  // likedBy.appendChild(likedSpan);
+  // // liked by photos
+  // const likedByPhotos = document.createElement("img");
+  // likedByPhotos.className = "profilePhoto";
+  // likedByPhotos.setAttribute("src", "/img/profile-12.jpg");
+  // likedSpan.appendChild(likedByPhotos);
+  // const likedByPhotos2 = document.createElement("img");
+  // likedByPhotos2.className = "profilePhoto";
+  // likedByPhotos2.setAttribute("src", "/img/profile-4.jpg");
+  // likedSpan.appendChild(likedByPhotos2);
+  // const likedByPhotos3 = document.createElement("img");
+  // likedByPhotos3.className = "profilePhoto";
+  // likedByPhotos3.setAttribute("src", "/img/profile-2.jpg");
+  // likedSpan.appendChild(likedByPhotos3);
   // etiqueta <p>Liked by <b>Ernest Achiever</b> and <b> 2,400 others</b></p>
   //lo anterior es hijo de likedBy
 
@@ -494,29 +491,25 @@ export const feed = () => {
   divFeeds.className = "feeds";
   middle.appendChild(divFeeds);
 
-  // description photo
-  const captionComments = document.createElement("div");
-  captionComments.className = "caption";
-  divFeed.appendChild(captionComments);
-  //aquí va <p><b>Lana Rose </b>lorem ipsum dolor sit quisquam eius.
-  //hijo de caption
-  const spanCaption = document.createElement("span");
-  captionComments.appendChild(spanCaption);
-  const hashtag = document.createElement("p");
-  hashtag.className = "harsh-tag"; //harshtag?
-  hashtag.textContent = "#lifestyle";
-  spanCaption.appendChild(hashtag);
+  // // description photo
+  // const captionComments = document.createElement("div");
+  // captionComments.className = "caption";
+  // divFeed.appendChild(captionComments);
+  // //aquí va <p><b>Lana Rose </b>lorem ipsum dolor sit quisquam eius.
+  // //hijo de caption
+  // const spanCaption = document.createElement("span");
+  // captionComments.appendChild(spanCaption);
+  // const hashtag = document.createElement("p");
+  // hashtag.className = "harsh-tag"; //harshtag?
+  // hashtag.textContent = "#lifestyle";
+  // spanCaption.appendChild(hashtag);
 
   //comments (muted)
-  const comments = document.createElement("div");
-  comments.className = "comments";
-  comments.className = "text-muted";
-  divFeed.appendChild(comments);
-  //CONTENEDOR PARA POST CREADOS///////////////77
-  const timelimeContainer = document.createElement("div");
-  timelimeContainer.classList.add("timelimeContainer");
-  timelimeContainer.setAttribute("id", "timelime");
-  feeds.appendChild(timelimeContainer);
+  // const comments = document.createElement("div");
+  // comments.className = "comments";
+  // comments.className = "text-muted";
+  // divFeed.appendChild(comments);
+
   // create right container
   const right = document.createElement("div");
   right.className = "right";
@@ -649,4 +642,3 @@ export const feed = () => {
 
   return root;
 };
-console.log(feed);
