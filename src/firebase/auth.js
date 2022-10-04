@@ -10,7 +10,8 @@ import {
   FacebookAuthProvider,
   providerFacebook,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  sendPasswordResetEmail
 } from "./init.js";
 
 //Función de promesa para CREAR usuario con email y contraseña
@@ -141,7 +142,22 @@ export const verification = () => {
     console.log(auth.currentUser);
   });
 };
-
+export const resetPass = (email, callback) => {
+  sendPasswordResetEmail(auth, email)
+    .then((userCredential) => {
+      callback(true);
+      alert('We sent you an email, please check your spam folder!');
+      return userCredential;
+      // console.log('entraste jeje');
+    })
+    .catch((error) => {
+      callback(false);
+      alert("We couldn't recover your password");
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      return errorMessage;
+    });
+};
 // Log out
 export const logOut = () => {
   signOut(auth)

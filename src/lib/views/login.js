@@ -1,4 +1,4 @@
-import { signInFunction, accessGoogle, loginWithFacebook, /*resetPass*/ } from "../../firebase/auth.js";
+import { signInFunction, accessGoogle, loginWithFacebook, resetPass } from "../../firebase/auth.js";
 
 export const createLogin = () => {
 
@@ -182,13 +182,13 @@ export const createLogin = () => {
     e.preventDefault();
     const email = document.getElementById('user-email').value;
     const alertaReset = (valid) => {
-      if (valid) {
-        // usar lo que retorna la resetemail
-        //  alert('Hemos enviado un email para que recuperes tu contraseña! Si no lo encuentras,
-        //  revisa en spam e intenta ingresar de nuevo');
-      } /* else {
-        //  alert('Tu usuario no ha sido verificado, intenta con otro correo');
-      } */
+     /*  if (valid) {
+         //usar lo que retorna la resetemail
+          alert('Hemos enviado un email para que recuperes tu contraseña! Si no lo encuentras')
+          //revisa en spam e intenta ingresar de nuevo');
+      }  else {
+          alert('Tu usuario no ha sido verificado, intenta con otro correo');
+      }   */
     };
     resetPass(email, alertaReset);
   });
