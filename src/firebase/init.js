@@ -9,7 +9,8 @@ import {
 	getRedirectResult,
 	FacebookAuthProvider,
 	signOut,
-	onAuthStateChanged
+	onAuthStateChanged,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 import { firebaseConfig } from './firebaseConfig.js';
@@ -47,5 +48,6 @@ export {
 	db,
 	onSnapshot,
 	collection,
-	onAuthStateChanged
+	onAuthStateChanged,
+  sendPasswordResetEmail
 };
