@@ -1,4 +1,4 @@
-import { signInFunction, accessGoogle, loginWithFacebook, resetPass } from "../../firebase/auth.js";
+import { signInFunction, accessGoogle, loginWithFacebook, /*resetPass*/ } from "../../firebase/auth.js";
 
 export const createLogin = () => {
 

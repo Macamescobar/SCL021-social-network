@@ -1,5 +1,6 @@
-import { logOut } from "../../firebase/auth.js";
+import { logOut, usuario} from "../../firebase/auth.js";
 import { savePost } from "../../firebase/firestore.js";
+
 
 export const feed = () => {
   const root = document.createElement("div");
@@ -50,9 +51,10 @@ export const feed = () => {
   divProfile.className = "profile-photo";
   divProfileNav.appendChild(divProfile);
   // Insertar img de perfil
+  let imageUser = usuario.photoURL;
   const imgProfile = document.createElement("img");
   imgProfile.className = "profilePhoto";
-  imgProfile.setAttribute("src", "img/profile-1.jpg");
+  imgProfile.src = imageUser != null ? imageUser : "img/profile-17.jpg" //se img es null utiliza el logo como img de perfil
   divProfile.appendChild(imgProfile);
 
   //Create logout icon
@@ -642,3 +644,4 @@ export const feed = () => {
 
   return root;
 };
+// console.log(feed);

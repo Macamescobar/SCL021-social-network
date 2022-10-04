@@ -4,29 +4,23 @@ import {
   addDoc,
   onSnapshot,
   getDocs,
-  Timestamp,
+  Timestamp
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
-// const createPost = async(content) => {
-//     try {
-//         const docRef = await addDoc(collection(db, “Posts”), {
-//           post: content
-//         });
-//         console.log(docRef.id);
-//       } catch (e) {
-//         console.error(“Error adding document: “, e);
-//       }
-// }
-//  export {createPost}
+
+console.log({auth:auth.currentUser});
+export const user = auth.currentUser;
+
+
 window.addEventListener("DOMContentLoaded", async () => {
   onGetSnapShot((querySnapshot) => {
     let html = "";
     const containerFeed = document.querySelector(".feeds");
     querySnapshot.forEach((doc) => {
-      // console.log(doc.data());
+      // console.log(new Date (doc.data().date.seconds*1000));
       const post = doc.data();
       html += `
       <div class='containerPost'>
-        <div class="feed">
+        <div class="feed">           
         <div class="head">
          <div class="user">
          <div class="profile-photo">
@@ -34,7 +28,7 @@ window.addEventListener("DOMContentLoaded", async () => {
          </div>
          <div class="info">
          <h3> ${post.userName} </h3>
-         <small> ${post.date} </small>
+         <small> ${(doc.data().date)} </small>
          </div>
         </div>
        <span class="edit">
@@ -59,15 +53,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   });
 });
+
 export const savePost = (description) => {
-  addDoc(collection(db, "Posts"), {
-    description,
-    date: Timestamp.fromDate(new Date()),
-    userName:
-      auth.currentUser.displayName != null
-        ? auth.currentUser.displayName
-        : auth.currentUser.email,
-  });
+  addDoc(collection(db, "Posts"), { description, date: Timestamp.fromDate(new Date()),userName: auth.currentUser.displayName != null ? auth.currentUser.displayName : auth.currentUser.email})
 };
-export const onGetSnapShot = (callback) =>
-  onSnapshot(collection(db, "Posts"), callback);
+
+export const onGetSnapShot = (callback) => onSnapshot(collection(db, "Posts"), callback);
