@@ -3,7 +3,6 @@ import {
   collection,
   addDoc,
   onSnapshot,
-  /* getDocs, */
   Timestamp,
   deleteDoc,
   query,
@@ -61,17 +60,17 @@ window.addEventListener("DOMContentLoaded", async () => {
       const deletePostFeed = containerFeed.querySelector('.fa-ellipsis')
       deletePostFeed.addEventListener('click', ({target: {dataset}}) => {
         deletePost(dataset.id)
-        console.log(deletePost)
+        // console.log(deletePost)
         // console.log(dataset.id)
       })
-      containerFeed.querySelectorAll('.fa-heart').forEach((element) => element.addEventListener('click', (e) => {
-        const like = e.target.dataset.idlikes;
-        const selectedPost = e.target;
-        console.log(selectedPost);
-        // selectedPost.classList.remove("fa-regular fa-heart");
-        // selectedPost.classList.add("fa-solid fa-heart")
-        // likes(like, auth.currentUser.uid);
-      }))
+      // containerFeed.querySelectorAll('.fa-heart').forEach((element) => element.addEventListener('click', (e) => {
+      //   const like = e.target.dataset.idlikes;
+      //   const selectedPost = e.target;
+      //   console.log(selectedPost);
+      //   // selectedPost.classList.remove("fa-regular fa-heart");
+      //   // selectedPost.classList.add("fa-solid fa-heart")
+      //   // likes(like, auth.currentUser.uid);
+      // }))
     });
   });
 });
