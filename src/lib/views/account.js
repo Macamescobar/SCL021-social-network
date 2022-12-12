@@ -1,4 +1,4 @@
-import { signCreate } from "../../firebase/auth.js";
+import { accessGoogle, signCreate } from "../../firebase/auth.js";
 
 export const signUp = () => {
   const root = document.createElement("div");
@@ -25,7 +25,10 @@ export const signUp = () => {
   iconArrow.className = "fa-solid fa-chevron-left fa-2x";
   btnArrow.appendChild(iconArrow);
 
-  btnArrow.addEventListener("click", () => {});
+  btnArrow.addEventListener("click", (e) => {
+    e.preventDefault();
+    location.hash = '#/';
+  });
   // Creando div contenedor
   const container = document.createElement("div");
   container.className = "container";
@@ -103,9 +106,15 @@ export const signUp = () => {
   const googleLogo = document.createElement("a");
   googleLogo.setAttribute("href", "#");
   social.appendChild(googleLogo);
+  //Agregar icono de google
   const google = document.createElement("i");
   google.className = "fa-brands fa-google-plus fa-2x";
   googleLogo.appendChild(google);
+  // Evento popup google
+  googleLogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    accessGoogle();
+  });
   //Creando contenedor del plato
   const platecontainer = document.createElement("div");
   platecontainer.className = "plate-container";

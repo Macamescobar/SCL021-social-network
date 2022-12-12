@@ -54,7 +54,7 @@ export const feed = () => {
   let imageUser = usuario.photoURL;
   const imgProfile = document.createElement("img");
   imgProfile.className = "profilePhoto";
-  imgProfile.src = imageUser != null ? imageUser : "img/profile-17.jpg" //se img es null utiliza el logo como img de perfil
+  imgProfile.src = imageUser != null ? imageUser : "img/profile-1.jpg" //se img es null utiliza el logo como img de perfil
   divProfile.appendChild(imgProfile);
 
   //Create logout icon
@@ -319,10 +319,11 @@ export const feed = () => {
   const createPost = document.createElement("form");
   createPost.className = "create-post";
   middle.appendChild(createPost);
-  /// profile img
+  /// profile img container
   const divProfPh = document.createElement("div");
   divProfPh.className = "profile-photo";
   createPost.appendChild(divProfPh);
+  // Add image
   const profileImg = document.createElement("img");
   profileImg.className = "profilePhoto";
   profileImg.setAttribute("src", "/img/profile-1.jpg");
@@ -357,7 +358,6 @@ export const feed = () => {
   divFeed.className = "feed";
   feeds.appendChild(divFeed);
   
-
   // feeds
   const divFeeds = document.createElement("div");
   divFeeds.className = "feeds";

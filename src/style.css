@@ -237,9 +237,11 @@ i {
   font-size: 1rem;
 }
 
-.href {
+.href-create-account, .href-forgot-password {
   text-decoration: none;
   color: #4422cf;
+  cursor: pointer;
+  margin-left: 0.5rem;
 }
 
 /* Plato */
@@ -640,7 +642,7 @@ main .sidebar-left .profile-left {
   border-radius: 50%;
   padding: 0.5rem;
   position: absolute;
-  top: 0.4rem;
+  top: 0.5rem;
   right: 12rem;
 }
 
@@ -676,6 +678,7 @@ main .sidebar-left .profile-left {
 }
 /* //////////////////// FEEDS //////////////// */
 
+
 .middle .feeds .feed {
   background: var(--color-withe);
   border-radius: var(--card-border-radius);
@@ -687,12 +690,13 @@ main .sidebar-left .profile-left {
 
 .middle .feed .head {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .middle .feed .user {
   display: flex;
-  gap: 1rem;
+  gap:1rem;
 }
 
 .middle .feed .photo {
@@ -748,6 +752,7 @@ main .sidebar-left .profile-left {
 .middle .liked-by p {
   margin-left: 0.5rem;
 }
+
 
 /* ///////////////// RIGHT ////////////////*/
 
@@ -907,4 +912,9 @@ img.profilePhoto {
 .right .request .action {
   display: flex;
   gap: 1rem;
+}
+
+.fa-solid {
+  background: none;
+  cursor: pointer;
 }
