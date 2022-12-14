@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     let html = "";
     const containerFeed = document.querySelector(".feeds");
     querySnapshot.forEach((doc) => {
+      // console.log(new Date (doc.data().date.seconds*1000));
       const post = doc.data();
       html += `
       <div class='containerPost'>
@@ -29,25 +30,26 @@ window.addEventListener("DOMContentLoaded", async () => {
          </div>
          <div class="info">
          <h3> ${post.userName} </h3>
-         <small> ${new Date(doc.data().date / 1000)} </small>
+         <small> ${new Date((doc.data().date/1000))} </small>
          </div>
         </div>
        <span class="edit">
         <i class="fa-solid fa-ellipsis fa-2x"></i>
         </span>
       </div>
-      <p>${post.description} <p/>
      <div class="action-buttons">
       <div class="interaction-buttons">
         <span><i class="fa-regular fa-heart"></i></span>
         <span><i class="fa-regular fa-comment"></i></span>
         <span><i class="fa-solid fa-share"></i></span>
       </div>
-     </div>
-      
+      <div class="bookmark">
+        <span<i class="uil uil-bookmark"></i></span>
+      </div>
+      </div>
+      <p><b> ${post.userName} </b>${post.description}
       </div>
      </div>
-  
       `;
       containerFeed.innerHTML = html;
     });
@@ -72,13 +74,13 @@ export const onGetSnapShot = (callback) =>
   onSnapshot(collection(db, "Posts"), callback);
 const q = query(collection(db, "Posts"), orderBy("date", "desc"));
 
-const deletePost = (id) => deleteDoc(doc(db, "Posts", id));
-const deletePostFeed = containerFeed.querySelector(".fa-ellipsis");
-deletePostFeed.addEventListener("click", ({ target: { dataset } }) => {
-  deletePost(dataset.id);
-  // console.log(deletePost)
-  // console.log(dataset.id)
-});
+// const deletePost = (id) => deleteDoc(doc(db, "Posts", id));
+// const deletePostFeed = containerFeed.querySelector(".fa-ellipsis");
+// deletePostFeed.addEventListener("click", ({ target: { dataset } }) => {
+//   deletePost(dataset.id);
+//   // console.log(deletePost)
+//   // console.log(dataset.id)
+// });
 
 // export const deletePost = (id) => {
 //   deleteDoc(doc(db, "Posts", id))
