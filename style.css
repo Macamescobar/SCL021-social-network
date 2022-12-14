@@ -691,7 +691,7 @@ main .sidebar-left .profile-left {
 .middle .feed .head {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .middle .feed .user {
@@ -729,6 +729,7 @@ main .sidebar-left .profile-left {
 .fa-bookmark:before,
 .fa-ellipsis:before {
   color: var(--color-primary);
+  cursor: pointer;
 }
 
 .middle .liked-by {
