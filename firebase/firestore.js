@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     querySnapshot.forEach((doc) => {
       // console.log(new Date (doc.data().date.seconds*1000));
       const post = doc.data();
+      console.log(post)
       html += `
       <div class='containerPost'>
         <div class="feed">           
